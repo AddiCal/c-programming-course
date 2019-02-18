@@ -1,9 +1,4 @@
-Grading at Mon Feb 18 05:02:43 UTC 2019
-I expected to find a file called 'fruit.txt' but it did not exist
-(or was not a regular file)
-Here are the files that I can find:
-fuit.txt
-grade.txt
-README
+Grading at Mon Feb 18 05:04:03 UTC 2019
+Your file matched the expected output
 
-Overall Grade: FAILED
+Overall Grade: PASSED
