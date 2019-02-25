@@ -3,7 +3,7 @@
 
 //Retirement struct
 struct _retire_info{
-  double months;
+  int months;
   double contribution;
   double rate_of_return;
 };
