@@ -24,12 +24,20 @@ kkjjn jjoow
 AAAaa BBbbk
 ~~!%^ ####^
 aaa   bbdkj
-
       jjin3
 ..... .....
 ((((( wecfe
 hello olleh
 22222 ?????
+$$$$$ 33333
+MMMMM -----
+----- TTTTT
+aaaaa >>>>>
+<<<<< nnnnn
+ccccd EEEEE
+EEEEE mmmmn
+11112 mmmma
+seeee 33333
     h lllio
 $$$$@ ffffw
 !!!~~ wweww
@@ -39,7 +47,6 @@ sasaa wwagr
 wwioo iioii
 wwwii nnlnn
 wolne wolne
-
 >>>>> <<<<<
 wefew efsew
 aaaaa AAAAA
@@ -64,3 +71,12 @@ aa444 444aa
 12121 21212
 >fF3@  <Lp0
 00000 00000
+          1
+~~~~~ 00000
+22222
+	99999
+jiiiw
+
+###########
+abcde jghijklmn
+pppppp mnmnm
