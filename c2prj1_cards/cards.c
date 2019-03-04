@@ -19,31 +19,31 @@ const char * ranking_to_string(hand_ranking_t r) {
   switch(r){
   
   case STRAIGHT_FLUSH:
-    printf("This is a straight flush\n");
+    printf("Straight flush");
     break;
   case FOUR_OF_A_KIND:
-    printf("This is a four of a kind\n");
+    printf("Four of a kind");
     break;
   case FULL_HOUSE:
-    printf("This is a full house\n");
+    printf("Full house");
     break;
   case FLUSH:
-    printf("This is a flush\n");
+    printf("Flush");
     break;
   case STRAIGHT:
-    printf("This is a straight\n");
+    printf("Straight");
     break;
   case THREE_OF_A_KIND:
-    printf("This is a three of a kind\n");
+    printf("Three of a kind");
     break;
   case TWO_PAIR:
-    printf("This is a two pair\n");
+    printf("Two pair");
     break;
   case PAIR:
-    printf("This is a pair\n");
+    printf("Pair");
     break;
   case NOTHING:
-    printf("This is a nothing\n");
+    printf("Nothing");
     break;
   }
   return "";
