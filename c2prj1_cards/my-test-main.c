@@ -5,15 +5,24 @@
 int main(void) {
   //test ranking_to_string fxn
   printf("testing ranking_to_string\n");
-  ranking_to_string(0);
-  ranking_to_string(1);
-  ranking_to_string(2);
-  ranking_to_string(3);
-  ranking_to_string(4);
-  ranking_to_string(5);
-  ranking_to_string(6);
-  ranking_to_string(7);
-  ranking_to_string(8);
+  printf("\ntest STRAIGHT FLUSH\n");
+  ranking_to_string(STRAIGHT_FLUSH);
+  printf("\ntest FOUR OF A KIND\n");
+  ranking_to_string(FOUR_OF_A_KIND);
+  printf("\ntest FULL HOUSE\n");
+  ranking_to_string(FULL_HOUSE);
+  printf("\ntest FLUSH\n");
+  ranking_to_string(FLUSH);
+  printf("\ntest STRAIGHT\n");
+  ranking_to_string(STRAIGHT);
+  printf("\ntest THREE OF A KIND\n");
+  ranking_to_string(THREE_OF_A_KIND);
+  printf("\ntest TWO PAIR\n");
+  ranking_to_string(TWO_PAIR);
+  printf("\ntest PAIR\n");
+  ranking_to_string(PAIR);
+  printf("\ntest NOTHING\n");
+  ranking_to_string(NOTHING);
   //ranking_to_string(-2);
   //ranking_to_string(9);
   

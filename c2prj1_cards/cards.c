@@ -19,34 +19,45 @@ const char * ranking_to_string(hand_ranking_t r) {
   switch(r){
   
   case STRAIGHT_FLUSH:
-    printf("Straight flush");
+    printf("STRAIGHT_FLUSH\n");
+    return "STRAIGHT_FLUSH";
     break;
   case FOUR_OF_A_KIND:
-    printf("Four of a kind");
+    printf("FOUR_OF_A_KIND\n");
+    return "FOUR_OF_A_KIND";
     break;
   case FULL_HOUSE:
-    printf("Full house");
+    printf("FULL_HOUSE\n");
+    return "FULL_HOUSE";
     break;
   case FLUSH:
-    printf("Flush");
+    printf("FLUSH\n");
+    return "FLUSH";
     break;
   case STRAIGHT:
-    printf("Straight");
+    printf("STRAIGHT\n");
+    return "STRAIGHT";
     break;
   case THREE_OF_A_KIND:
-    printf("Three of a kind");
+    printf("THREE_OF_A_KIND\n");
+    return"THREE_OF_A_KIND";
     break;
   case TWO_PAIR:
-    printf("Two pair");
+    printf("TWO_PAIR\n");
+    return "TWO_PAIR";
     break;
   case PAIR:
-    printf("Pair");
+    printf("PAIR\n");
+    return "PAIR";
     break;
   case NOTHING:
-    printf("Nothing");
+    printf("NOTHING\n");
+    return "NOTHING";
+    break;
+  default:
+    return "";
     break;
   }
-  return "";
 }
 
 char value_letter(card_t c) {
