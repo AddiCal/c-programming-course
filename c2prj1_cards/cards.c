@@ -100,7 +100,7 @@ void print_card(card_t c) {
   char value;
   suit = suit_letter(c);
   value = value_letter(c);
-  printf("%c%c\n",value,suit);
+  printf("%c%c",value,suit);
 }
 
 card_t card_from_letters(char value_let, char suit_let) {
