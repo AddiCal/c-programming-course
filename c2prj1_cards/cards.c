@@ -78,23 +78,17 @@ char suit_letter(card_t c) {
   switch(c.suit){
   case SPADES:
     suit = 's';
-    //return 's';
     break;
   case HEARTS:
     suit = 'h';
-    //return 'h';
     break;
   case DIAMONDS:
     suit = 'd';
-    //return 'd';
     break;
   case CLUBS:
     suit = 'c';
-    //return 'c';
     break;
   default:
-    suit = '?';
-    //return 'E';
     break;
   }
   return suit;
@@ -113,17 +107,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
   //check suit
   assert(suit_let=='c' || suit_let=='h' || suit_let=='d' || suit_let=='s');
-  //check value
-  int value = ((int) value_let); // 48='0'
-  //check absolute bounds
-  assert(value>47);
-  assert(value<82);
-  //values for 0-9, A, J, K, Q
-  assert((value>=48 && value<=57) || value==65 || value==74 || value==75 || value==81);
-  temp.value = value_let;
-  temp.suit = suit_let;
-  print_card(temp);
-  /*
+  //convert suit
   switch(suit_let){
   case 's':
     temp.suit = SPADES;
@@ -137,14 +121,30 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'c':
     temp.suit = CLUBS;
     break;
-    //default:
-    //temp.suit = 20;//something has gone wrong
-    //break;
   }
-  //default is error case, specified suit wasn't c,d,s, or h
-  //assert(temp.suit!=20);
-  */
   //convert value
+  int value = ((int) value_let); // 48='0'
+  if (value>=50 && value<=57){
+    //for values 2-9
+    temp.value = (value - 48);
+  }
+  if (value == 48){
+    temp.value = 10;
+    }
+  if (value == 65){
+    temp.value = VALUE_ACE; //'A'=65
+  }
+  if (value == 75){
+    temp.value = VALUE_KING; //'K'=75
+  }
+  if (value == 81){
+    temp.value = VALUE_QUEEN; //'Q'=81
+  }
+  if (value == 74){
+    temp.value = VALUE_JACK; //'J'=74
+  }
+
+  assert_card_valid(temp);
   return temp;
 }
 
