@@ -111,7 +111,19 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  //convert suit
+  //check suit
+  assert(suit_let=='c' || suit_let=='h' || suit_let=='d' || suit_let=='s');
+  //check value
+  int value = ((int) value_let); // 48='0'
+  //check absolute bounds
+  assert(value>47);
+  assert(value<82);
+  //values for 0-9, A, J, K, Q
+  assert((value>=48 && value<=57) || value==65 || value==74 || value==75 || value==81);
+  temp.value = value_let;
+  temp.suit = suit_let;
+  print_card(temp);
+  /*
   switch(suit_let){
   case 's':
     temp.suit = SPADES;
@@ -131,14 +143,8 @@ card_t card_from_letters(char value_let, char suit_let) {
   }
   //default is error case, specified suit wasn't c,d,s, or h
   //assert(temp.suit!=20);
-
+  */
   //convert value
-  temp.value = ((int) value_let); // 48='0'
-  //check absolute bounds
-  assert(temp.value>47);
-  assert(temp.value<82);
-  //values for 0-9, A, J, K, Q
-  assert((temp.value>=48 && temp.value<=57) || temp.value==65 || temp.value==74 || temp.value==75 || temp.value==81); 
   return temp;
 }
 
