@@ -3,6 +3,9 @@
 #include <string.h>
 
 void reverse(char * str) {
+  if (!str){
+    return;
+  }
   //find length of string
   char * spot = str;
   int count = 0;
@@ -16,10 +19,7 @@ void reverse(char * str) {
     }
     */
   }
-  //reject null pointer
-  if (count==0){
-    return;
-  }
+  
   //reverse string
   int divNum = count/2; //want integer division to ignore middle of odd lengthed strings
   char swap;
