@@ -9,12 +9,17 @@ void reverse(char * str) {
   while (*spot != '\0'){
     count++;
     spot++;
+    if (count == 10000){
+      printf("ERROR: no null terminator found\n");
+      exit(EXIT_FAILURE);
+    }
   }
   //reverse string
   int divNum = count/2; //want integer division to ignore middle of odd lengthed strings
   char swap;
   char temp;
   count -= 1;
+
   for (int i = 0; i < divNum; i++){
     swap = str[count - i];
     temp = str[i];
@@ -27,7 +32,6 @@ void reverse(char * str) {
     str += i;
     //replace start of string with swap
     *str = swap;
-    //print intermadiate string
     //return counter to zero
     str -= i;
   }
