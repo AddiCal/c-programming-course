@@ -11,12 +11,12 @@ int getNthBit(uint32_t number, int bit) {
 }
 
 void numToBits(uint32_t * nums, int nNums, int * bits, int nBits) {
+  //check that there's enough space in bits for all the nums
+  if ( nBits < (32*nNums)){
+    printf("Invalid call to numToBits! nBits is %d, nNums is %d\n", nBits, nNums);
+    return;
+  }
   for (int i = 0; i < nNums; i++){
-    //check that it's 32 bits (<=4294967295), if not return error
-    if (nums[i] > 4294967295){
-      printf("Invalid call to numToBits! nBits is %d, nNums is %d\n", nBits, nNums);
-      return;
-    }
     for (int j = 0; j < 32; j++){ //from 1 to 32 for each
       bits[i*32 + j] = getNthBit(nums[i],31-j);
     }
@@ -24,7 +24,7 @@ void numToBits(uint32_t * nums, int nNums, int * bits, int nBits) {
 }
 
 void doTest(uint32_t * nums, int n) {
-  int bits[n*32];
+  int bits[n *32];
   numToBits(nums, n, bits, n*32);
   for (int i =0; i < n; i++) {
     printf(" %9d (%8X) => ", nums[i], nums[i]);
