@@ -3,7 +3,6 @@
 
 void transpose(char matrix[10][10]){
   char temp1;
-  char temp2;
   for (int i=0; i<10; i++){
     for (int j=0; j<10; j++){
       if (j > i){
