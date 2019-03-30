@@ -20,39 +20,39 @@ const char * ranking_to_string(hand_ranking_t r) {
   switch(r){
   
   case STRAIGHT_FLUSH:
-    printf("STRAIGHT_FLUSH\n");
+    //printf("STRAIGHT_FLUSH\n");
     return "STRAIGHT_FLUSH";
     break;
   case FOUR_OF_A_KIND:
-    printf("FOUR_OF_A_KIND\n");
+    //printf("FOUR_OF_A_KIND\n");
     return "FOUR_OF_A_KIND";
     break;
   case FULL_HOUSE:
-    printf("FULL_HOUSE\n");
+    //printf("FULL_HOUSE\n");
     return "FULL_HOUSE";
     break;
   case FLUSH:
-    printf("FLUSH\n");
+    //printf("FLUSH\n");
     return "FLUSH";
     break;
   case STRAIGHT:
-    printf("STRAIGHT\n");
+    //printf("STRAIGHT\n");
     return "STRAIGHT";
     break;
   case THREE_OF_A_KIND:
-    printf("THREE_OF_A_KIND\n");
+    //printf("THREE_OF_A_KIND\n");
     return"THREE_OF_A_KIND";
     break;
   case TWO_PAIR:
-    printf("TWO_PAIR\n");
+    //printf("TWO_PAIR\n");
     return "TWO_PAIR";
     break;
   case PAIR:
-    printf("PAIR\n");
+    //printf("PAIR\n");
     return "PAIR";
     break;
   case NOTHING:
-    printf("NOTHING\n");
+    //printf("NOTHING\n");
     return "NOTHING";
     break;
   default:
