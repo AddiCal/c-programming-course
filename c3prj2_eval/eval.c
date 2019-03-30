@@ -4,43 +4,251 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  return 0;
+  //qsort takes an array of cards to sort
+  //the inputs to this function are pointers to the two array elements to be compared (card structs)
+  const card_t * const * cp1 = vp1;//given a pointer to array elements that point to a struct
+  const card_t * const * cp2 = vp2;
+  if ( (*cp2)->value == (*cp1)->value){//if values are the same, compare suits
+    if ( (*cp2)->suit == (*cp1)->suit ){//if the suits are the same, and value is the same, return 0
+	return 0;
+      }
+    return (*cp2)->suit - (*cp1)->suit;//otherwise sort by value club<diamond<heart<spade
+  }
+  return (*cp2)->value - (*cp1)->value; //inverted to sort in descending order
 }
 
 suit_t flush_suit(deck_t * hand) {
+  //determines if a flush exists, if not it returns NUM_SUITS
+  //5 cards of any value, same suit
+  //assume hand is already sorted by value?
+  int spade=0; //3
+  int club=0; //0
+  int diamond=0; //1
+  int heart=0; //2
+
+  //this should work but you should really clean this up later
+  //find out how many of each suit we have
+  for (int i = 0; i < (hand->n_cards); i++){
+    if ((hand->cards[i]->suit) == CLUBS){
+      club++;
+    }
+    else if ((hand->cards[i]->suit) == DIAMONDS){
+      diamond++;
+    }
+    else if ((hand->cards[i]->suit) == HEARTS){
+      heart++;
+    }
+    else {
+      spade++;
+    }
+  }
+
+  //find out if we have 5 of any one suit and return that suit
+  if ( (spade==5) ){
+    return SPADES;
+  }
+  else if ( heart==5 ){
+    return HEARTS;
+  }
+  else if ( diamond==5){
+    return DIAMONDS;
+  }
+  else if ( club==5 ){
+    return CLUBS;
+  }
+  else{
+    return NUM_SUITS;
+  }
   return NUM_SUITS;
 }
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
-  return 0;
+  //find the largest element in the array
+  //set largest to the first element
+  unsigned largest=arr[0];
+  //replace largest with larger array elements as they arise
+  for (int i = 1; i < n; i++) {
+    if (arr[i] > largest){
+      largest = arr[i];
+    }
+  }
+  return largest;
 }
 
 size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
-
-  return 0;
+  //return the lowest index of the value n_of_a_kind in the array match_counts
+  for (int i = 0; i < n; i++){
+    if (match_counts[i] == n_of_akind){
+      return i;
+    }
+  }
+  //if it can't find a match, return exit failure
+  return -1;
 }
 ssize_t  find_secondary_pair(deck_t * hand,
 			     unsigned * match_counts,
 			     size_t match_idx) {
+  //find a card with:
+  //1. match_count>1
+  //2. card value is not the same as the value of the card at idx
+  //3. the lowest index meeting the first two criteria
+  int new_value;
+  int match_value = (hand->cards[match_idx]->value);
+  for (int i = 0; i < (hand->n_cards); i++){
+    //look for a pair with a different value than the first
+    if ( match_counts[i] > 1 ){
+      new_value = (hand->cards[i]->value);
+      if ( (new_value != match_value) ){
+	return i;
+      }
+    }
+  }
   return -1;
 }
 
+
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
+  //looks for a straight in the hand starting at the given index
+  //fs tells you the suit it should look for if any
+  //hand is sorted in to descending order A = 14
+  //return -1 for ace low straight, 0 for no straight, 1 for other straights
+  //card_t count;
+
+  //find out how to incorporate num_suits
+  //check first value suit matches fs
+  if ( ((hand->cards[index]->suit) != fs) && (fs != NUM_SUITS) ){
+    return 0;
+  }
+
+  //loop through hand from index to end
+  int count=1;
+  for ( int i = index; i < (hand->n_cards-1); i++){
+
+    //check that card value decreases by 1 and suits work
+    if ( (hand->cards[i+1]->value) == ( (hand->cards[i]->value) - 1) ){
+      //check that suits match fs unless fs is numsuit
+      if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
+	count++; //if count gets to 5 we have a suit, or 4 plus ace
+      }
+    }
+    
+    //if back to back cards are the same, skip it but keep looking
+    else if ( (hand->cards[i+1]->value) ==  (hand->cards[i]->value) ){
+      continue;
+    }
+    
+    //if count is 5 you have a straight (in case there are more than 5 cars in loop?)
+    else if ( count == 5){
+      return 1;
+    }
+    
+    //cards are not in order
+    else {
+      return 0;
+    }
+  }
+
+  //I think this has to happen twice in case there are exactly 5 cards in the loop
+  if ( count == 5){
+    return 1;
+  }
+
+  //check for ace low straight
+  //check for a straight with 4 consecutive cards that starts with the value 5
+  if ( (count == 4) && ((hand->cards[index]->value) == 5) ) {
+    //check first four cards for possible aces
+    for (int i = 0; i < 4; i++){
+      //check that there is an  ace with the right suit
+      if ( ((hand->cards[i]->value) == 14) && ((hand->cards[i]->suit) == fs || fs == NUM_SUITS) ){
+	return -1;
+      }
+    }
+  }
   return 0;
 }
+
 
 hand_eval_t build_hand_from_match(deck_t * hand,
 				  unsigned n,
 				  hand_ranking_t what,
 				  size_t idx) {
+  //make hand_eval_t, ranking is what value, n cards starting at index idx in to cards array
+  //used only for the first n_of_akind finds, the second pair will be found later
 
+  //**add aserts for other rankings!!
+  assert(what>0); //can't be nothing
   hand_eval_t ans;
+  
+  ans.ranking = what;
+  
+  //fill in first n cards of ans with nofakind from hand
+  //cycle through cards in hand
+  int ind = 0;
+  for (int i = 0; i < hand->n_cards; i++){
+    //isloate cars corresponding to nofakind
+    if ( i>=idx && i<(idx+n)){
+      ans.cards[ind] = hand->cards[i];
+      ind++;
+      if (ind == n){
+	break;
+      }
+    }
+  }
+  //!!Hand can have more than 5 cards!
+  //fill the remaining cards in ans with the next highest cards of hand
+  //cycle through cards in hand
+  ind = n;
+  for (int i = 0; i < hand->n_cards; i++){
+    //isloate cars NOT corresponding to nofakind
+    if ( i<idx || i>=(idx+n)){
+      ans.cards[ind] = (hand->cards[i]);
+      ind++;
+      if (ind == 5) {
+	break;
+      }
+    } 
+  }
   return ans;
 }
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
+  //return +1 if hand 1 wins, -1 if hand 2 wins, 0 for tie
+  
+  //a. sort hands with qsort
+  qsort( (hand1->cards), (hand1->n_cards), sizeof(hand1->cards[0]), card_ptr_comp);
+  qsort( (hand2->cards), (hand2->n_cards), sizeof(hand2->cards[0]), card_ptr_comp);
+  
+  //b. call evaluate_hand on each hand
+  hand_eval_t h1;
+  h1 = evaluate_hand(hand1);
+  hand_eval_t h2;
+  h2 = evaluate_hand(hand2);
 
+  //c. decide which hand winds based on their ranking
+  if ((h1.ranking) > (h2.ranking)){
+    //h1 wins
+    return 1;
+  }
+  else if ((h1.ranking) < (h2.ranking)){
+    //h2 wins
+    return -1;
+  }
+  
+  //d. if the rankings tie you'll have to compare the tie breaking cards
+  if ((h1.ranking) == (h2.ranking)){
+    for (int i = 0; i < 5; i++){
+      if ( (h1.cards[i]->value) > (h2.cards[i]->value) ){
+	//h1 wins
+	return 1;
+      }
+      else if ( (h1.cards[i]->value) < (h2.cards[i]->value) ){
+	//h2 wins
+	return -1;
+      }
+    }
+  }
+  //hands are tied
   return 0;
 }
 

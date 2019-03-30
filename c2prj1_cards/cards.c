@@ -7,7 +7,8 @@
 void assert_card_valid(card_t c) {
   //assert stops the program if the statement is false
   //check syntax for card struct
-  assert(c.value >= 2);
+  assert(c.value >= 0);
+  assert(c.value != 1);
   assert(c.value <= 14);
   assert(c.suit >= 0);
   assert(c.suit < 4);
