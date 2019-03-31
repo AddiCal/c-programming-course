@@ -122,11 +122,16 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
     if ((next) == ( (current) - 1)){
       //check that suit matches
       if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
-	count++; 
+	count++;
       }
     }
     //keep going if there's a duplicate card
+    //what if there's a pair and the second suit is the right one
     else if (next == current){
+      //check suit for next to see if it matches
+      if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
+	count++;
+      }
       continue;
     }
     else {
@@ -144,31 +149,32 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
   //search for 5,4,3,2 straight
-  int straight;
+  int straight=0;
+  int count=0;
   for (int i = 0; i < hand->n_cards; i++){
-   straight = is_n_length_straight_at(hand, i, fs, 4);
-   if ( straight == 1 && hand->cards[i]->value == 5){
-     for (int i = 0; i < 4; i++){
-       if ( hand->cards[i]->value==14 && (hand->cards[i]->suit==fs || fs==NUM_SUITS)){
-	 //ace low straight present
-	 return 1;
-       }
-     }
-   }
-  }
-  /*
-  //straight is 1 for true, 0 for false
-  int straight = is_n_length_straight_at(hand, index, fs, 4);
-  if ( straight == 1 && hand->cards[index]->value == 5){
-    for (int i = 0; i < 4; i++){
-      if ( hand->cards[i]->value==14 && (hand->cards[i]->suit==fs || fs==NUM_SUITS)){
-	//ace low straight present
-	return 1;
-      }
+    straight = is_n_length_straight_at(hand, i, fs, 4);
+    //if a length 4 straight is found at i, check that it starts with a 5
+    if ((straight == 1) && (hand->cards[i]->value == 5)){
+      count = 1;
+      break;
     }
   }
-  */
-  //no ace low straight
+  //if straight present, look for ace at start of deck
+  int idx=-1;
+  if (count == 1){
+    for ( int j = 0; j < 3; j++){
+      if ( hand->cards[j]->value == VALUE_ACE && ( fs == NUM_SUITS || hand->cards[j]->suit == fs)){
+	idx = j;
+	break;
+      }
+    }
+    
+  }
+  //if index of matching ace matches input index, return 1
+  if ( idx == index){
+    return 1;
+  }
+
   return 0;
 }
 
@@ -181,10 +187,12 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   //card_t count;
 
   //1 for true, 0 for false
-  int reg_straight = is_n_length_straight_at(hand, index, fs, 5);
+  int reg_straight = 0;
+  reg_straight= is_n_length_straight_at(hand, index, fs, 5);
   //1 for true, 0 for false
-  int ace_straight = is_ace_low_straight_at(hand, index, fs);
-
+  int ace_straight = 0;
+  ace_straight = is_ace_low_straight_at(hand, index, fs);
+  
   //regular straight present
   if (reg_straight == 1){
     return 1;
