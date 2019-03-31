@@ -124,16 +124,21 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
       if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
 	count++;
       }
+      //if the next card is one less but the wrong suit, check the one after for a pair
+      else{
+	continue;
+      }
     }
     //keep going if there's a duplicate card
     //what if there's a pair and the second suit is the right one
     else if (next == current){
-      //check suit for next to see if it matches
-      if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
+      //check that suit matches
+      if ( ((hand->cards[i+1]->suit) == fs) ){
 	count++;
       }
       continue;
     }
+    
     else {
       //no straight at index
       break;
