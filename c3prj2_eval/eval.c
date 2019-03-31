@@ -44,16 +44,16 @@ suit_t flush_suit(deck_t * hand) {
   }
 
   //find out if we have 5 of any one suit and return that suit
-  if ( (spade==5) ){
+  if ( (spade>=5) ){
     return SPADES;
   }
-  else if ( heart==5 ){
+  else if ( heart>=5 ){
     return HEARTS;
   }
-  else if ( diamond==5){
+  else if ( diamond>=5){
     return DIAMONDS;
   }
-  else if ( club==5 ){
+  else if ( club>=5 ){
     return CLUBS;
   }
   else{
@@ -256,11 +256,12 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
   h2 = evaluate_hand(hand2);
 
   //c. decide which hand winds based on their ranking
-  if ((h1.ranking) > (h2.ranking)){
+  //ranking of 0 is STRAIGHTFLUSH, ranking of 9 is NOTHING
+  if ((h1.ranking) < (h2.ranking)){
     //h1 wins
     return 1;
   }
-  else if ((h1.ranking) < (h2.ranking)){
+  else if ((h1.ranking) > (h2.ranking)){
     //h2 wins
     return -1;
   }
