@@ -125,6 +125,10 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
 	count++; 
       }
     }
+    //keep going if there's a duplicate card
+    else if (next == current){
+      continue;
+    }
     else {
       //no straight at index
       break;
@@ -139,10 +143,23 @@ int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
 }
 
 int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
+  //search for 5,4,3,2 straight
+  int straight;
+  for (int i = 0; i < hand->n_cards; i++){
+   straight = is_n_length_straight_at(hand, i, fs, 4);
+   if ( straight == 1 && hand->cards[i]->value == 5){
+     for (int i = 0; i < 4; i++){
+       if ( hand->cards[i]->value==14 && (hand->cards[i]->suit==fs || fs==NUM_SUITS)){
+	 //ace low straight present
+	 return 1;
+       }
+     }
+   }
+  }
+  /*
   //straight is 1 for true, 0 for false
   int straight = is_n_length_straight_at(hand, index, fs, 4);
-
-  if ( straight == 4 && hand->cards[index]->value == 5){
+  if ( straight == 1 && hand->cards[index]->value == 5){
     for (int i = 0; i < 4; i++){
       if ( hand->cards[i]->value==14 && (hand->cards[i]->suit==fs || fs==NUM_SUITS)){
 	//ace low straight present
@@ -150,6 +167,7 @@ int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
       }
     }
   }
+  */
   //no ace low straight
   return 0;
 }
