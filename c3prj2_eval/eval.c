@@ -38,7 +38,7 @@ suit_t flush_suit(deck_t * hand) {
     else if ((hand->cards[i]->suit) == HEARTS){
       heart++;
     }
-    else {
+    else if ((hand->cards[i]->suit) == SPADES){
       spade++;
     }
   }
@@ -106,6 +106,46 @@ ssize_t  find_secondary_pair(deck_t * hand,
   return -1;
 }
 
+int is_n_length_straight_at(deck_t * hand, size_t index, suit_t fs, int n){
+  //check first value suit matches fs
+  if ( ((hand->cards[index]->suit) != fs) && (fs != NUM_SUITS) ){
+    return 0;
+  }
+  //loop through hand starting at index
+  int count = 0;
+  for (int i = index; i < (hand->n_cards - 1); i++){
+    //check that value decreases by 1
+    if ((hand->cards[i+1]->value) == ( (hand->cards[i]->value) - 1)){
+      //check that suit matches
+      if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
+	count++; 
+      }
+    }
+    //return 1 if straight of length n at index is present
+    if (count == n){
+      return 1;
+    }
+  }
+  //return 0 if straight of length n at indes is not present
+  return 0;
+}
+
+int is_ace_low_straight_at(deck_t * hand, size_t index, suit_t fs){
+  //straight is 1 for true, 0 for false
+  int straight = is_n_length_straight_at(hand, index, fs, 4);
+
+  if ( straight == 4 && hand->cards[index]->value == 5){
+    for (int i = 0; i < 4; i++){
+      if ( hand->cards[i]->value==14 && (hand->cards[i]->suit==fs || fs==NUM_SUITS)){
+	//ace low straight present
+	return 1;
+      }
+    }
+  }
+  //no ace low straight
+  return 0;
+}
+
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   //looks for a straight in the hand starting at the given index
@@ -114,56 +154,20 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
   //return -1 for ace low straight, 0 for no straight, 1 for other straights
   //card_t count;
 
-  //find out how to incorporate num_suits
-  //check first value suit matches fs
-  if ( ((hand->cards[index]->suit) != fs) && (fs != NUM_SUITS) ){
-    return 0;
-  }
+  //1 for true, 0 for false
+  int reg_straight = is_n_length_straight_at(hand, index, fs, 5);
+  //1 for true, 0 for false
+  int ace_straight = is_ace_low_straight_at(hand, index, fs);
 
-  //loop through hand from index to end
-  int count=1;
-  for ( int i = index; i < (hand->n_cards-1); i++){
-
-    //check that card value decreases by 1 and suits work
-    if ( (hand->cards[i+1]->value) == ( (hand->cards[i]->value) - 1) ){
-      //check that suits match fs unless fs is numsuit
-      if ( ((hand->cards[i+1]->suit) == fs) || (fs == NUM_SUITS) ){
-	count++; //if count gets to 5 we have a suit, or 4 plus ace
-      }
-    }
-    
-    //if back to back cards are the same, skip it but keep looking
-    else if ( (hand->cards[i+1]->value) ==  (hand->cards[i]->value) ){
-      continue;
-    }
-    
-    //if count is 5 you have a straight (in case there are more than 5 cars in loop?)
-    else if ( count == 5){
-      return 1;
-    }
-    
-    //cards are not in order
-    else {
-      return 0;
-    }
-  }
-
-  //I think this has to happen twice in case there are exactly 5 cards in the loop
-  if ( count == 5){
+  //regular straight present
+  if (reg_straight == 1){
     return 1;
   }
-
-  //check for ace low straight
-  //check for a straight with 4 consecutive cards that starts with the value 5
-  if ( (count == 4) && ((hand->cards[index]->value) == 5) ) {
-    //check first four cards for possible aces
-    for (int i = 0; i < 4; i++){
-      //check that there is an  ace with the right suit
-      if ( ((hand->cards[i]->value) == 14) && ((hand->cards[i]->suit) == fs || fs == NUM_SUITS) ){
-	return -1;
-      }
-    }
+  //ace stright present
+  if (ace_straight == 1){
+    return -1;
   }
+  //no straights
   return 0;
 }
 
