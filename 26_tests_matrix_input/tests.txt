@@ -1,0 +1,11 @@
+goodmatrix.txt
+shortrow.txt
+shortcol.txt
+nonewline.txt
+spaces.txt
+nonprintable.txt
+extranewline.txt
+fake.txt
+specialchar.txt
+0 goodmatrix.txt
+
