@@ -45,6 +45,7 @@ void  printArray(FILE * f){
   //print data
   for ( int j = 0; j < i; j++){
     printf("%s", array[j]);
+    free(array[j]);
   }
   free(array);
 }
@@ -76,6 +77,11 @@ int main(int argc, char ** argv) {
       }
       
       printArray(f);
+
+      if ( fclose(f) != 0) {
+	perror("Could not close input file");
+	return EXIT_FAILURE;
+      }
     }
   }
   
