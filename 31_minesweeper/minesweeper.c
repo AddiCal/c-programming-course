@@ -46,19 +46,21 @@ board_t * makeBoard(int w, int h, int numMines) {
   //board_t has: int ** board, int height, int width, int totalMines
 
   //initialize a board_t
-  board_t brd;
+  static board_t brd;
   brd.width = w;
   brd.height = h;
   brd.totalMines = numMines;
-  brd.board = malloc((brd.height)*sizeof(*(brd.board)));
+
+  brd.board = malloc(brd.height*sizeof(*(brd.board)));
   //make sure array malloced properly
   if ( brd.board == NULL){
     fprintf(stderr, "ERROR: ran out of memory\n");
     exit(EXIT_FAILURE);
   }
+  
   //use malloc to create a 2D array (malloc each element of the width)
   for (int i = 0; i < brd.height; i++){
-    brd.board[i] = malloc((brd.width)*sizeof(*(brd.board[i])));
+    brd.board[i] = malloc(brd.width*sizeof(*(brd.board[i])));
     //make sure memory was allocated properly
     if (brd.board[i] == NULL){
       fprintf(stderr, "ERROR: ran out of memory\n");
@@ -70,11 +72,11 @@ board_t * makeBoard(int w, int h, int numMines) {
     }
   }
   //add random mines to the board (creates a pointer and manipulates a pointer)
-  board_t * ptr = &brd;
+  //board_t * ptr = &brd;
   for (int i = 0; i < numMines; i++){
-    addRandomMine(ptr);
+    addRandomMine(&brd);
   }
-  return ptr;
+  return &brd;
 }
 
 void printBoard(board_t * b) {    
