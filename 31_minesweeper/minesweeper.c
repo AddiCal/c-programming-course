@@ -136,14 +136,14 @@ int countMines(board_t * b, int x, int y) {
   //only check values within the bounds of the board
   assert(x>=0);
   assert(y>=0);
-  assert(x<0);
-  assert(y<0);
+  assert(x<b->width);
+  assert(y<b->height);
   int count = 0;
   //loop through 0, 1, 2 (-1, 0, 1) to check coords around provided
   for ( int i = 0; i < 3; i++){
     for ( int j = 0; j < 3; j ++){
-      //skip coordinates that are bigger or smaller than the board
-      if ( (x+j-1) > b->width || (x+j-1) < 0  || (y+i-1) > b->height || (y+i-1) < 0 ){
+      //skip coordinates that are bigger or smaller than the board (indexing starts at 0)
+      if ( (x+j-1) >= b->width || (x+j-1) < 0  || (y+i-1) >= b->height || (y+i-1) < 0 ){
 	continue;
       }
       //otherwise use macro to check if coords contain mine
