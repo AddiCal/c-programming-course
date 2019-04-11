@@ -41,9 +41,42 @@ void addRandomMine(board_t * b) {
 }
 
 board_t * makeBoard(int w, int h, int numMines) {
-  //WRITE ME!
-  return NULL;
+  //This function creates a board (2D array of height h and width w) and fills it with the corresponding number of mines.
+  //The rest of the squares are filled with UNKNOWN
+  //board_t has: int ** board, int height, int width, int totalMines
+
+  //initialize a board_t
+  board_t brd;
+  brd.width = w;
+  brd.height = h;
+  brd.totalMines = numMines;
+  brd.board = malloc((brd.height)*sizeof(*(brd.board)));
+  //make sure array malloced properly
+  if ( brd.board == NULL){
+    fprintf(stderr, "ERROR: ran out of memory\n");
+    exit(EXIT_FAILURE);
+  }
+  //use malloc to create a 2D array (malloc each element of the width)
+  for (int i = 0; i < brd.height; i++){
+    brd.board[i] = malloc((brd.width)*sizeof(*(brd.board[i])));
+    //make sure memory was allocated properly
+    if (brd.board[i] == NULL){
+      fprintf(stderr, "ERROR: ran out of memory\n");
+      exit(EXIT_FAILURE);
+    }
+    //fill in all the squares with UNKNOWN
+    for (int j = 0; j < brd.width; j++){
+      brd.board[i][j] = UNKNOWN;
+    }
+  }
+  //add random mines to the board (creates a pointer and manipulates a pointer)
+  board_t * ptr = &brd;
+  for (int i = 0; i < numMines; i++){
+    addRandomMine(ptr);
+  }
+  return ptr;
 }
+
 void printBoard(board_t * b) {    
   int found = 0;
   printf("    ");
@@ -95,8 +128,30 @@ void printBoard(board_t * b) {
   printf("\nFound %d of %d mines\n", found, b->totalMines);
 }
 int countMines(board_t * b, int x, int y) {
-  //WRITE ME!
-  return 0;
+  //This function takes a board and an x,y coordinate and counts the number of mines surrounding that spot
+  //take a coordinate x,y and check all of the squares around it
+  //use IS_MINE macro to determine if there's a mine at the input coordinate
+  //only check values within the bounds of the board
+  assert(x>=0);
+  assert(y>=0);
+  assert(x<0);
+  assert(y<0);
+  int count = 0;
+  //loop through 0, 1, 2 (-1, 0, 1) to check coords around provided
+  for ( int i = 0; i < 3; i++){
+    for ( int j = 0; j < 3; j ++){
+      //skip coordinates that are bigger or smaller than the board
+      if ( (x+j-1) > b->width || (x+j-1) < 0  || (y+i-1) > b->height || (y+i-1) < 0 ){
+	continue;
+      }
+      //otherwise use macro to check if coords contain mine
+      if (IS_MINE(b->board[y+i-1][x+j-1])){
+	count++;
+      } 
+    }
+  }
+  
+  return count;
 }
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
@@ -118,12 +173,23 @@ int click (board_t * b, int x, int y) {
 }
 
 int checkWin(board_t * b) {
-  //WRITE ME!
-  return 0;
+  //check all the squares on the board. if no squares are unknown return 1, else return 0
+  for ( int i = 0; i < b->height; i++ ){
+    for ( int j = 0; j < b->width; j++){
+      if ( b->board[i][j] == UNKNOWN){
+	return 0;
+      }
+    } 
+  }
+  return 1;
 }
 
 void freeBoard(board_t * b) {
-  //WRITE ME!
+  //This function takes a board and frees all the memory associated with it
+  for ( int i = 0; i < b->height; i++ ){
+    free(b->board[i]);
+  }
+  free(b->board);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
