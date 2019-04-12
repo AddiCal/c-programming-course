@@ -34,7 +34,7 @@ kvarray_t * parseFile(FILE * f){
     line = NULL;
     i++;
   }
-  pairs.length = i-1;
+  pairs.length = i;
   free(line);
 
   return &pairs;
@@ -69,7 +69,7 @@ void freeKVs(kvarray_t * pairs) {
   for (int i = 0; i < pairs->length; i++){
     //free memory allocated for each string by getline()
     free(pairs->pairArray[i].key);
-    //free(pairs->pairArray[i].value);
+    pairs->pairArray[i].key = NULL;
   }
   //free the array that held the strings
   free(pairs->pairArray);
@@ -85,7 +85,7 @@ void printKVs(kvarray_t * pairs) {
 char * lookupValue(kvarray_t * pairs, const char * key) {
   //This function searches a kv pair array for a specific key
   //if the key is found, the corresponding value is returned. if not it returns NULL
-  for (int i = 0; i < pairs->length; i++){
+  for (int i = 0; i < (pairs->length-1); i++){
     if ( strcmp(pairs->pairArray[i].key, key) == 0){
       return pairs->pairArray[i].value;
     }
