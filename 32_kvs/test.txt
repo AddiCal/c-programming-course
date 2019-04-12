@@ -4,3 +4,4 @@ orange=orange
 grapes=purple
 carrot=orange
 eggplant=purple
+kiwi=green=yummy

@@ -13,7 +13,8 @@ kvpair_t parseString(char * line){
     fprintf(stderr, "ERROR: key value file has incorrect format (missing =)\n");
     exit(EXIT_FAILURE);
   }
-  pair.value = strtok(NULL, "=");
+  pair.value = strtok(NULL, "");
+  //printf("pair value: %s \n",pair.value);
   //replace new line at end of value with \0
   pair.value[strlen(pair.value)-1] = '\0';
   return pair;  
