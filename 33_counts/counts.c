@@ -11,6 +11,7 @@ counts_t * createCounts(void) {
   static counts_t count;
   count.array = malloc(1*sizeof(*(count.array)));
   count.length = 0;
+  count.unknown = 0;
   
   return &count;
 }
