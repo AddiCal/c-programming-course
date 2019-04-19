@@ -106,17 +106,19 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
 
   int count = 0;
   int j = 0;
-  for ( int i = 0; i < 52; i++){
-    card_t c = card_from_num(i);
-    if ( deck_contains(excluded_cards, c) == 1 ){
-      count++;
-      continue;
+  for ( int i = 0; i < 13; i++){
+    for ( int k = 0; k < 4; k++){ 
+      card_t c = card_from_num(i+k*13);
+      if ( deck_contains(excluded_cards, c) == 1 ){
+	count++;
+	continue;
+      }
+      else{
+	smallDeck[j].value = c.value;
+	smallDeck[j].suit = c.suit;
+	j++;
+      }
     }
-    else{
-      smallDeck[j].value = c.value;
-      smallDeck[j].suit = c.suit;
-      j++;
-    }		      
   }
   //ans.cards = &smallDeck;
   for ( int i = 0; i < newLen; i ++){

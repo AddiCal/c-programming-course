@@ -184,7 +184,7 @@ card_t card_from_num(unsigned c) {
   }
 
   //find value (with %)
-  c +=1;
+  //c +=1;
   switch(c%13){
   case 0:
     temp.value = VALUE_KING; //VALUE_ACE; //10

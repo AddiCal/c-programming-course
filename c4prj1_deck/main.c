@@ -5,7 +5,14 @@
 #include "deck.h"
 #include "cards.h"
 
- 
+void print_deck(deck_t * deck){
+  printf("\n");
+  for ( int i = 0; i < deck->n_cards; i++){
+    print_card(*(deck->cards[i]));
+    printf(" ");
+  }
+  printf("\n");
+} 
 
 int main(){
   //make full deck
@@ -14,14 +21,25 @@ int main(){
     fullDeck[i] = card_from_num(i);
   }
 
+  for (int i = 0; i < 52; i++){
+    print_card(fullDeck[i]);
+    printf(" ");
+  }
+  printf("\n");
+
   //make hand
   deck_t hand;
   hand.cards = malloc(5*sizeof(card_t *));
   hand.n_cards = 5;
+  int index = 0;
   for ( int i = 0; i < hand.n_cards; i++){
-    hand.cards[i] = &fullDeck[i];
-    printf("%d: value: %d suit: %d\n", i, hand.cards[i]->value, hand.cards[i]->suit);
+    //index = random()%52;
+    hand.cards[i] = &fullDeck[i+index];
+    print_card(*(hand.cards[i]));
+    printf(" ");
+    index+=5;
   }
+  printf("\n");
   /*
   //=== test (1)
   printf("\n ==TEST1==\n");
@@ -38,10 +56,17 @@ int main(){
   */
   //=== test(3)
   printf("\n ==TEST3==\n");
-  deck_t * newDeck = make_deck_exclude(&hand);
-  for ( int i = 0; i < newDeck->n_cards; i++){
-    printf("%d: value: %d suit: %d\n", i,  newDeck->cards[i]->value, newDeck->cards[i]->suit);
-  }
+  deck_t empty;
+  empty.cards = NULL;
+  empty.n_cards = 0;
+
+  deck_t * newDeck = make_deck_exclude(&empty);
+  print_deck(newDeck);
+
+  newDeck->cards = NULL;
+  newDeck->n_cards = 0;
+  newDeck = make_deck_exclude(&hand);
+  print_deck(newDeck);
   /*
   //=== test(4)
   printf("\n ==TEST4==\n");
