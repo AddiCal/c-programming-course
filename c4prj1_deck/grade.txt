@@ -1,0 +1,1048 @@
+Grading at Fri Apr 19 04:53:32 UTC 2019
+Compiling deck.c -> deck.o
+Compiling eval.c -> eval.o
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+Testing free_deck(deck_t *)
+- Test passed
+Testing add_card_to(deck_t *, card_t)
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 13, suit: 2
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+added: value: 7, suit: 2
+added: value: 7, suit: 3
+added: value: 8, suit: 0
+added: value: 8, suit: 1
+added: value: 8, suit: 2
+added: value: 8, suit: 3
+added: value: 9, suit: 0
+added: value: 9, suit: 1
+added: value: 9, suit: 2
+added: value: 9, suit: 3
+added: value: 10, suit: 0
+added: value: 10, suit: 1
+added: value: 10, suit: 2
+added: value: 10, suit: 3
+added: value: 11, suit: 0
+added: value: 13, suit: 0
+added: value: 13, suit: 1
+added: value: 13, suit: 2
+added: value: 13, suit: 3
+added: value: 14, suit: 0
+added: value: 14, suit: 1
+added: value: 14, suit: 2
+added: value: 14, suit: 3
+added: value: 2, suit: 0
+added: value: 2, suit: 1
+added: value: 2, suit: 2
+added: value: 2, suit: 3
+added: value: 3, suit: 0
+added: value: 3, suit: 1
+added: value: 3, suit: 2
+added: value: 3, suit: 3
+added: value: 4, suit: 0
+added: value: 4, suit: 1
+added: value: 4, suit: 2
+added: value: 4, suit: 3
+added: value: 5, suit: 0
+added: value: 5, suit: 1
+added: value: 5, suit: 2
+added: value: 5, suit: 3
+added: value: 6, suit: 0
+added: value: 6, suit: 1
+added: value: 6, suit: 2
+added: value: 6, suit: 3
+added: value: 7, suit: 0
+added: value: 7, suit: 1
+added: value: 11, suit: 1
+added: value: 11, suit: 2
+added: value: 11, suit: 3
+added: value: 12, suit: 0
+added: value: 12, suit: 1
+added: value: 12, suit: 2
+added: value: 12, suit: 3
+- Test passed
+Testing add_empty_card(deck_t *)
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+added: value: 0, suit: 4
+- Test passed
+Testing make_deck_exclude(deck_t *)
+excluded count: 0
+excluded count: 1
+excluded count: 2
+excluded count: 3
+excluded count: 4
+excluded count: 5
+excluded count: 6
+excluded count: 7
+excluded count: 8
+excluded count: 9
+excluded count: 10
+excluded count: 11
+excluded count: 12
+excluded count: 13
+excluded count: 14
+excluded count: 15
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
+Your deck: 2h 3h 4h 5h 6h 7h Jh Qh Kh Ah 2d 3d 4d 5d 6d Jd Qd Kd Ad 2c 3c 4c 5c 6c Jc Qc Kc Ac 2s 3s 4s 5s 6s 7s Qs Ks As 
+Valgrind reported errors:
+==653== Memcheck, a memory error detector
+==653== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==653== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==653== Command: ./tester mde
+==653== Parent PID: 652
+==653== 
+==653== Invalid free() / delete / delete[] / realloc()
+==653==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==653==    by 0x40241B: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x403B88: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==653==  Address 0x521e1d0 is 0 bytes inside a block of size 296 free'd
+==653==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==653==    by 0x40241B: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x403B88: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==653==  Block was alloc'd at
+==653==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==653==    by 0x4021D8: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x4039CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==653==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==653== 
+==653== 
+==653== HEAP SUMMARY:
+==653==     in use at exit: 11,096 bytes in 31 blocks
+==653==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
+==653== 
+==653== LEAK SUMMARY:
+==653==    definitely lost: 5,400 bytes in 15 blocks
+==653==    indirectly lost: 5,400 bytes in 15 blocks
+==653==      possibly lost: 0 bytes in 0 blocks
+==653==    still reachable: 296 bytes in 1 blocks
+==653==         suppressed: 0 bytes in 0 blocks
+==653== Rerun with --leak-check=full to see details of leaked memory
+==653== 
+==653== For counts of detected and suppressed errors, rerun with: -v
+==653== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
+Testing build_remaining_deck(deck_t **, size_t)
+Testing with 1 hand
+excluded count: 1
+excluded count: 2
+excluded count: 3
+excluded count: 4
+excluded count: 5
+excluded count: 6
+excluded count: 7
+excluded count: 8
+Testing with 2 hands
+excluded count: 9
+excluded count: 10
+excluded count: 11
+excluded count: 12
+excluded count: 13
+excluded count: 14
+excluded count: 15
+excluded count: 16
+Testing with 3 hands
+excluded count: 17
+excluded count: 18
+excluded count: 19
+excluded count: 20
+excluded count: 21
+excluded count: 22
+excluded count: 23
+excluded count: 24
+Testing with 4 hands
+excluded count: 25
+excluded count: 26
+excluded count: 27
+excluded count: 28
+excluded count: 29
+excluded count: 30
+excluded count: 31
+excluded count: 32
+Testing with 5 hands
+excluded count: 33
+excluded count: 34
+excluded count: 35
+excluded count: 36
+excluded count: 37
+excluded count: 38
+excluded count: 39
+excluded count: 40
+Testing with 6 hands
+excluded count: 41
+excluded count: 42
+Valgrind reported errors:
+==657== Memcheck, a memory error detector
+==657== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==657== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==657== Command: ./tester brd
+==657== Parent PID: 656
+==657== 
+==657== Invalid free() / delete / delete[] / realloc()
+==657==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x403790: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==657==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
+==657==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x403790: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==657==  Block was alloc'd at
+==657==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4021C0: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x4023E7: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x40362C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==657== 
+==657== Invalid free() / delete / delete[] / realloc()
+==657==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==657==    by 0x4037AB: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==657==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==657==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2926"
+==657== 
+==657== 
+==657== HEAP SUMMARY:
+==657==     in use at exit: 0 bytes in 0 blocks
+==657==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
+==657== 
+==657== All heap blocks were freed -- no leaks are possible
+==657== 
+==657== For counts of detected and suppressed errors, rerun with: -v
+==657== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
+Testing get_match_count(deck_t *)
+- Test passed
+
+Overall Grade: C
