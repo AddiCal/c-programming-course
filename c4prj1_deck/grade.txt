@@ -1,4 +1,4 @@
-Grading at Fri Apr 19 16:30:07 UTC 2019
+Grading at Fri Apr 19 17:05:46 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -27,73 +27,73 @@ excluded count: 13
 excluded count: 14
 excluded count: 15
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
-Your deck: As 2s 3s 4s 5s 6s 7s Qs Ks Ah 2h 3h 4h 5h 6h 7h Jh Qh Kh Ad 2d 3d 4d 5d 6d Jd Qd Kd Ac 2c 3c 4c 5c 6c Jc Qc Kc 
+Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Valgrind reported errors:
-==483== Memcheck, a memory error detector
-==483== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==483== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==483== Command: ./tester mde
-==483== Parent PID: 482
-==483== 
-==483== Invalid free() / delete / delete[] / realloc()
-==483==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==483==    by 0x4023D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x403B38: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==483==  Address 0x521e1d0 is 0 bytes inside a block of size 296 free'd
-==483==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==483==    by 0x4023D3: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x403B38: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==483==  Block was alloc'd at
-==483==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==483==    by 0x402190: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x40397C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==483==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==483== 
-==483== 
-==483== HEAP SUMMARY:
-==483==     in use at exit: 11,096 bytes in 31 blocks
-==483==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
-==483== 
-==483== LEAK SUMMARY:
-==483==    definitely lost: 5,400 bytes in 15 blocks
-==483==    indirectly lost: 5,400 bytes in 15 blocks
-==483==      possibly lost: 0 bytes in 0 blocks
-==483==    still reachable: 296 bytes in 1 blocks
-==483==         suppressed: 0 bytes in 0 blocks
-==483== Rerun with --leak-check=full to see details of leaked memory
-==483== 
-==483== For counts of detected and suppressed errors, rerun with: -v
-==483== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
+==835== Memcheck, a memory error detector
+==835== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==835== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==835== Command: ./tester mde
+==835== Parent PID: 834
+==835== 
+==835== Invalid free() / delete / delete[] / realloc()
+==835==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x4023FD: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x403B58: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==835==  Address 0x521e1d0 is 0 bytes inside a block of size 296 free'd
+==835==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x4023FD: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x403B58: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==835==  Block was alloc'd at
+==835==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==835==    by 0x402190: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x40399C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==835==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==835== 
+==835== 
+==835== HEAP SUMMARY:
+==835==     in use at exit: 11,096 bytes in 31 blocks
+==835==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
+==835== 
+==835== LEAK SUMMARY:
+==835==    definitely lost: 5,400 bytes in 15 blocks
+==835==    indirectly lost: 5,400 bytes in 15 blocks
+==835==      possibly lost: 0 bytes in 0 blocks
+==835==    still reachable: 296 bytes in 1 blocks
+==835==         suppressed: 0 bytes in 0 blocks
+==835== Rerun with --leak-check=full to see details of leaked memory
+==835== 
+==835== For counts of detected and suppressed errors, rerun with: -v
+==835== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
 excluded count: 1
@@ -144,42 +144,42 @@ Testing with 6 hands
 excluded count: 41
 excluded count: 42
 Valgrind reported errors:
-==487== Memcheck, a memory error detector
-==487== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==487== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==487== Command: ./tester brd
-==487== Parent PID: 486
-==487== 
-==487== Invalid free() / delete / delete[] / realloc()
-==487==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==487==    by 0x403740: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==487==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
-==487==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==487==    by 0x403740: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==487==  Block was alloc'd at
-==487==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==487==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x40239F: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x4035DC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==487== 
-==487== Invalid free() / delete / delete[] / realloc()
-==487==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==487==    by 0x40375B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==487==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==487==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2926"
-==487== 
-==487== 
-==487== HEAP SUMMARY:
-==487==     in use at exit: 0 bytes in 0 blocks
-==487==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
-==487== 
-==487== All heap blocks were freed -- no leaks are possible
-==487== 
-==487== For counts of detected and suppressed errors, rerun with: -v
-==487== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
+==839== Memcheck, a memory error detector
+==839== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==839== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==839== Command: ./tester brd
+==839== Parent PID: 838
+==839== 
+==839== Invalid free() / delete / delete[] / realloc()
+==839==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==839==    by 0x403760: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==839==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
+==839==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==839==    by 0x403760: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==839==  Block was alloc'd at
+==839==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==839==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x4023C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x4035FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==839== 
+==839== Invalid free() / delete / delete[] / realloc()
+==839==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==839==    by 0x40377B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==839==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==839==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2926"
+==839== 
+==839== 
+==839== HEAP SUMMARY:
+==839==     in use at exit: 0 bytes in 0 blocks
+==839==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
+==839== 
+==839== All heap blocks were freed -- no leaks are possible
+==839== 
+==839== For counts of detected and suppressed errors, rerun with: -v
+==839== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
