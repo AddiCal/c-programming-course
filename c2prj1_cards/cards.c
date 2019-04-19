@@ -217,13 +217,13 @@ card_t card_from_num(unsigned c) {
     temp.value = 9; //10; //9;
     break;
   case 10:
-    temp.value = VALUE_JACK;
+    temp.value = 10; //VALUE_JACK;
     break;
   case 11:
-    temp.value = VALUE_QUEEN;
+    temp.value = VALUE_JACK; //VALUE_QUEEN;
     break;
   case 12:
-    temp.value = VALUE_KING;
+    temp.value = VALUE_QUEEN; //VALUE_KING;
     break;
   }
   
