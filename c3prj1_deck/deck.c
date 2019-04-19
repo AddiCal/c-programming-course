@@ -78,7 +78,7 @@ void add_card_to( deck_t * deck, card_t c){
   int newLen = deck->n_cards + 1;
   deck->cards = realloc(deck->cards, newLen*sizeof(card_t *));
   deck->cards[newLen-1] = &card[0];
-  printf("added: value: %d, suit: %d\n", deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
+  //printf("added: value: %d, suit: %d\n", deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
   deck->n_cards++;
 }
 
@@ -99,7 +99,6 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   static card_t *smallDeck;
   int newLen = 52-excluded_cards->n_cards;
   smallDeck = malloc(newLen*sizeof(card_t));
-  //card_t smallDeck[newLen];
   
   static deck_t ans;
   ans.cards = malloc(newLen*sizeof(card_t*));
@@ -124,7 +123,6 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
     ans.cards[i] = &smallDeck[i];
   }
   printf("excluded count: %d\n", count);
-  //free(smallDeck);
   
   return &ans;
 }

@@ -167,16 +167,16 @@ card_t card_from_num(unsigned c) {
 
   //find suit
   if(c>=0 && c<13){
-    temp.suit = HEARTS;
+    temp.suit = SPADES;
   }
   else if (c>=13 && c<26){
-    temp.suit = DIAMONDS;
+    temp.suit = HEARTS;
   }
   else if (c>=26 && c<39){
-    temp.suit = CLUBS;
+    temp.suit = DIAMONDS;
   }
   else if (c>=39 && c<52){
-    temp.suit = SPADES;
+    temp.suit = CLUBS;
   }
   else {
     printf("ERROR: invalid card (suit)");
@@ -187,34 +187,34 @@ card_t card_from_num(unsigned c) {
   c +=1;
   switch(c%13){
   case 0:
-    temp.value = VALUE_ACE; //10
+    temp.value = VALUE_KING; //VALUE_ACE; //10
     break;
   case 1:
-    temp.value = 2; //VALUE_ACE;
+    temp.value = VALUE_ACE; //2; //VALUE_ACE;
     break;
   case 2:
-    temp.value = 3; //2;
+    temp.value = 2; //3; //2;
     break;
   case 3:
-    temp.value = 4; //3;
+    temp.value = 3; //4; //3;
     break;
   case 4:
-    temp.value = 5; //4;
+    temp.value = 4; //5; //4;
     break;
   case 5:
-    temp.value = 6; //5;
+    temp.value = 5; //6; //5;
     break;
   case 6:
-    temp.value = 7; //6;
+    temp.value = 6; //7; //6;
     break;
   case 7:
-    temp.value = 8; //7;
+    temp.value = 7; //8; //7;
     break;
   case 8:
-    temp.value = 9; //8;
+    temp.value = 8; //9; //8;
     break;
   case 9:
-    temp.value = 10; //9;
+    temp.value = 9; //10; //9;
     break;
   case 10:
     temp.value = VALUE_JACK;
