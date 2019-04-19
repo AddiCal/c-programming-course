@@ -141,6 +141,7 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   //group all the cards from all the hands in to one
   int k = 0;
   allHands.cards = malloc(size*sizeof(card_t*));
+  allHands.n_cards = size;
   for ( int i = 0; i < n_hands; i++){
     for ( int j = 0; j < hands[i]->n_cards; j++){
       allHands.cards[k] = hands[i]->cards[j];
@@ -154,6 +155,6 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
 }
 
 void free_deck(deck_t * deck){
-  free(deck->cards[deck->n_cards-1]);
+  //free(deck->cards[deck->n_cards-1]);
   free(deck->cards);
 }
