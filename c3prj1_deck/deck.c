@@ -92,11 +92,12 @@ card_t * add_empty_card(deck_t * deck){
   return ans;
 }
 
+
 deck_t * make_deck_exclude(deck_t * excluded_cards){
   //creates a full deck minus the cards in excluded_cards
   //use card_from_num and deck_contains
   //0-12 hearts, 13-25 diamonds, 26-38 clubs, 39-51 spades 
-  static card_t *smallDeck;
+  card_t *smallDeck;
   int newLen = 52-excluded_cards->n_cards;
   smallDeck = malloc(newLen*sizeof(card_t));
   

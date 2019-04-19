@@ -69,7 +69,7 @@ int main(){
   print_deck(newDeck);
 
   //7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h
-  printf("Build test deck\n");
+  printf("\nExcluded deck from grader\n");
   card_t test[14];
   test[0] = card_from_letters('7','s');
   test[1] = card_from_letters('7','h');
@@ -94,6 +94,7 @@ int main(){
     print_card(*(testDeck.cards[i]));
     printf(" ");
   }
+  printf("\nDeck returned by make_deck_exclude");
   newDeck->cards = NULL;
   newDeck->n_cards = 0;
   newDeck = make_deck_exclude(&testDeck);
