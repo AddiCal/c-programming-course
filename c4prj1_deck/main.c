@@ -67,6 +67,37 @@ int main(){
   newDeck->n_cards = 0;
   newDeck = make_deck_exclude(&hand);
   print_deck(newDeck);
+
+  //7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h
+  printf("Build test deck\n");
+  card_t test[14];
+  test[0] = card_from_letters('7','s');
+  test[1] = card_from_letters('7','h');
+  test[2] = card_from_letters('7','d');
+  test[3] = card_from_letters('7','c');
+  test[4] = card_from_letters('8','s');
+  test[5] = card_from_letters('8','h');
+  test[6] = card_from_letters('8','d');
+  test[7] = card_from_letters('8','c');
+  test[8] = card_from_letters('9','s');
+  test[9] = card_from_letters('9','h');
+  test[10] = card_from_letters('9','d');
+  test[11] = card_from_letters('9','c');
+  test[12] = card_from_letters('0','s');
+  test[13] = card_from_letters('0','h');
+  deck_t testDeck;
+  testDeck.cards = malloc(14*sizeof(card_t*));
+  testDeck.n_cards = 14;
+  for ( int i = 0; i < testDeck.n_cards; i++){
+    //index = random()%52;
+    testDeck.cards[i] = &test[i];
+    print_card(*(testDeck.cards[i]));
+    printf(" ");
+  }
+  newDeck->cards = NULL;
+  newDeck->n_cards = 0;
+  newDeck = make_deck_exclude(&testDeck);
+  print_deck(newDeck);
   /*
   //=== test(4)
   printf("\n ==TEST4==\n");
