@@ -1,4 +1,4 @@
-Grading at Fri Apr 19 20:57:29 UTC 2019
+Grading at Sun Apr 21 21:39:13 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -41,43 +41,43 @@ Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
 Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Valgrind reported errors:
-==1447== Memcheck, a memory error detector
-==1447== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1447== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1447== Command: ./tester mde
-==1447== Parent PID: 1446
-==1447== 
-==1447== Invalid free() / delete / delete[] / realloc()
-==1447==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1447==    by 0x4023E7: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x403B48: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1447==  Address 0x521d190 is 0 bytes inside a block of size 296 free'd
-==1447==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1447==    by 0x4023E7: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x403B48: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1447==  Block was alloc'd at
-==1447==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1447==    by 0x40218D: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x40398C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==1447==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1447== 
-==1447== 
-==1447== HEAP SUMMARY:
-==1447==     in use at exit: 11,096 bytes in 31 blocks
-==1447==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
-==1447== 
-==1447== LEAK SUMMARY:
-==1447==    definitely lost: 5,696 bytes in 16 blocks
-==1447==    indirectly lost: 5,400 bytes in 15 blocks
-==1447==      possibly lost: 0 bytes in 0 blocks
-==1447==    still reachable: 0 bytes in 0 blocks
-==1447==         suppressed: 0 bytes in 0 blocks
-==1447== Rerun with --leak-check=full to see details of leaked memory
-==1447== 
-==1447== For counts of detected and suppressed errors, rerun with: -v
-==1447== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
+==178== Memcheck, a memory error detector
+==178== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==178== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==178== Command: ./tester mde
+==178== Parent PID: 177
+==178== 
+==178== Invalid free() / delete / delete[] / realloc()
+==178==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==178==    by 0x4023BA: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x403B18: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==178==  Address 0x521d190 is 0 bytes inside a block of size 296 free'd
+==178==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==178==    by 0x4023BA: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x403B18: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==178==  Block was alloc'd at
+==178==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==178==    by 0x40221A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x40395C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==178==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==178== 
+==178== 
+==178== HEAP SUMMARY:
+==178==     in use at exit: 11,096 bytes in 31 blocks
+==178==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
+==178== 
+==178== LEAK SUMMARY:
+==178==    definitely lost: 5,696 bytes in 16 blocks
+==178==    indirectly lost: 5,400 bytes in 15 blocks
+==178==      possibly lost: 0 bytes in 0 blocks
+==178==    still reachable: 0 bytes in 0 blocks
+==178==         suppressed: 0 bytes in 0 blocks
+==178== Rerun with --leak-check=full to see details of leaked memory
+==178== 
+==178== For counts of detected and suppressed errors, rerun with: -v
+==178== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
 Testing with 2 hands
@@ -86,42 +86,42 @@ Testing with 4 hands
 Testing with 5 hands
 Testing with 6 hands
 Valgrind reported errors:
-==1451== Memcheck, a memory error detector
-==1451== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1451== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1451== Command: ./tester brd
-==1451== Parent PID: 1450
-==1451== 
-==1451== Invalid free() / delete / delete[] / realloc()
-==1451==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1451==    by 0x403750: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1451==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
-==1451==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1451==    by 0x403750: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1451==  Block was alloc'd at
-==1451==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1451==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x4023B3: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x4035EC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1451== 
-==1451== Invalid free() / delete / delete[] / realloc()
-==1451==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1451==    by 0x40376B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==1451==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==1451==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2926"
-==1451== 
-==1451== 
-==1451== HEAP SUMMARY:
-==1451==     in use at exit: 0 bytes in 0 blocks
-==1451==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
-==1451== 
-==1451== All heap blocks were freed -- no leaks are possible
-==1451== 
-==1451== For counts of detected and suppressed errors, rerun with: -v
-==1451== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
+==182== Memcheck, a memory error detector
+==182== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==182== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==182== Command: ./tester brd
+==182== Parent PID: 181
+==182== 
+==182== Invalid free() / delete / delete[] / realloc()
+==182==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==182==    by 0x403720: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==182==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
+==182==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==182==    by 0x403720: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==182==  Block was alloc'd at
+==182==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==182==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x402386: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x4035BC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==182== 
+==182== Invalid free() / delete / delete[] / realloc()
+==182==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==182==    by 0x40373B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==182==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==182==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2936"
+==182== 
+==182== 
+==182== HEAP SUMMARY:
+==182==     in use at exit: 0 bytes in 0 blocks
+==182==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
+==182== 
+==182== All heap blocks were freed -- no leaks are possible
+==182== 
+==182== For counts of detected and suppressed errors, rerun with: -v
+==182== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
