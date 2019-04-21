@@ -156,8 +156,9 @@ int main(){
   free(hand.cards);
   
   //free TEST3 (make_deck_exclude)
-  free(*(newDeck->cards));
-  free(newDeck->cards);
+  free_deck(newDeck);
+  //free(*(newDeck->cards));
+  //free(newDeck->cards);
   /*
   //free TEST4 (build_remaining_deck)
   free(hand1.cards);

@@ -96,37 +96,38 @@ card_t * add_empty_card(deck_t * deck){
 deck_t * make_deck_exclude(deck_t * excluded_cards){
   //creates a full deck minus the cards in excluded_cards
   //use card_from_num and deck_contains
-  //0-12 hearts, 13-25 diamonds, 26-38 clubs, 39-51 spades 
-  card_t *smallDeck;
-  int newLen = 52-excluded_cards->n_cards;
-  smallDeck = malloc(newLen*sizeof(card_t));
-  
-  static deck_t ans;
-  ans.cards = malloc(newLen*sizeof(card_t*));
-  ans.n_cards = newLen;
+  //0-12 hearts, 13-25 diamonds, 26-38 clubs, 39-51 spades
+  int len = 52 - excluded_cards->n_cards;
+  card_t * cards = malloc(len*sizeof(card_t));
+  //static card_t cards[len] = {0, NUM_SUITS};
 
-  int count = 0;
-  int j = 0;
+  int k = 0;
   for ( int i = 0; i < 13; i++){
-    for ( int k = 0; k < 4; k++){
-      //printf("num: %d\n", i+k*13);
-      card_t c = card_from_num(i+k*13);
-      if ( deck_contains(excluded_cards, c) == 1 ){
-	count++;
-	continue;
-      }
-      else{
-	smallDeck[j].value = c.value;
-	smallDeck[j].suit = c.suit;
-	j++;
+    for (int j = 0; j < 4; j++){
+      card_t c = card_from_num(i+13*j);
+      if (deck_contains(excluded_cards, c) == 0){
+	cards[k] = c;
+	k++;
       }
     }
   }
-  //ans.cards = &smallDeck;
-  for ( int i = 0; i < newLen; i ++){
-    ans.cards[i] = &smallDeck[i];
+  //card_t empty = {0, NUM_SUITS};
+  static deck_t ans;
+  ans.n_cards = len;
+  //*ans.cards[len] = {NULL};
+  ans.cards = malloc(len*sizeof(card_t*));
+  for (int i = 0; i < len; i++){
+    ans.cards[i] = &cards[i];
   }
-  
+  //ans.cards[len] = &empty;
+  /*
+  static deck_t ans;
+  ans.cards = malloc(len*sizeof(card_t*));
+  for ( int i = 1; i < len; i++){
+    ans.cards[i] = &cards[i];
+  }
+  ans.n_cards = len;
+  */
   return &ans;
 }
 
