@@ -137,6 +137,7 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   allHands.n_cards = size;
   for ( int i = 0; i < n_hands; i++){
     for ( int j = 0; j < hands[i]->n_cards; j++){
+      //would hands have duplicate cards??
       allHands.cards[k] = hands[i]->cards[j];
       k++;
     }
@@ -144,6 +145,7 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   //biuld deck that remains
   deck_t * ans =  make_deck_exclude(&allHands);
   //free(allHands.cards);
+  free_deck(&allHands);
   return ans;
 }
 
