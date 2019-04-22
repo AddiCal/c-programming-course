@@ -114,20 +114,11 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   //card_t empty = {0, NUM_SUITS};
   static deck_t ans;
   ans.n_cards = len;
-  //*ans.cards[len] = {NULL};
+  //ans.cards = &cards;
   ans.cards = malloc(len*sizeof(card_t*));
   for (int i = 0; i < len; i++){
     ans.cards[i] = &cards[i];
   }
-  //ans.cards[len] = &empty;
-  /*
-  static deck_t ans;
-  ans.cards = malloc(len*sizeof(card_t*));
-  for ( int i = 1; i < len; i++){
-    ans.cards[i] = &cards[i];
-  }
-  ans.n_cards = len;
-  */
   return &ans;
 }
 
@@ -152,7 +143,7 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   }
   //biuld deck that remains
   deck_t * ans =  make_deck_exclude(&allHands);
-  free(allHands.cards);
+  //free(allHands.cards);
   return ans;
 }
 

@@ -71,20 +71,20 @@ int main(){
   //7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h
   printf("\nExcluded deck from grader\n");
   card_t test[14];
-  test[0] = card_from_letters('7','s');
-  test[1] = card_from_letters('7','h');
-  test[2] = card_from_letters('7','d');
-  test[3] = card_from_letters('7','c');
-  test[4] = card_from_letters('8','s');
-  test[5] = card_from_letters('8','h');
-  test[6] = card_from_letters('8','d');
-  test[7] = card_from_letters('8','c');
-  test[8] = card_from_letters('9','s');
+  test[0] = card_from_letters('2','s');
+  test[1] = card_from_letters('3','h');
+  test[2] = card_from_letters('4','d');
+  test[3] = card_from_letters('4','c');
+  test[4] = card_from_letters('5','s');
+  test[5] = card_from_letters('5','h');
+  test[6] = card_from_letters('6','d');
+  test[7] = card_from_letters('7','c');
+  test[8] = card_from_letters('8','s');
   test[9] = card_from_letters('9','h');
   test[10] = card_from_letters('9','d');
-  test[11] = card_from_letters('9','c');
-  test[12] = card_from_letters('0','s');
-  test[13] = card_from_letters('0','h');
+  test[11] = card_from_letters('0','c');
+  test[12] = card_from_letters('J','s');
+  test[13] = card_from_letters('Q','h');
   deck_t testDeck;
   testDeck.cards = malloc(14*sizeof(card_t*));
   testDeck.n_cards = 14;
@@ -99,7 +99,7 @@ int main(){
   newDeck->n_cards = 0;
   newDeck = make_deck_exclude(&testDeck);
   print_deck(newDeck);
-  /*
+  
   //=== test(4)
   printf("\n ==TEST4==\n");
   deck_t hand1;
@@ -124,7 +124,7 @@ int main(){
   for ( int i = 0; i < remaining->n_cards; i++){
     printf("%d: value: %d suit: %d\n", i, remaining->cards[i]->value, remaining->cards[i]->suit);
   }
-  
+  /*
   //===test (5)
   printf("\n==TEST5 matchCounts==\n");
   
@@ -159,14 +159,14 @@ int main(){
   free_deck(newDeck);
   //free(*(newDeck->cards));
   //free(newDeck->cards);
-  /*
+  
   //free TEST4 (build_remaining_deck)
   free(hand1.cards);
   free(hand2.cards);
   free(hand3.cards);
   //free(*(remaining->cards));
   //free(remaining->cards);
-  
+  /*
   //free TEST5 (get_match_counts)
   free(Match.cards);
   free(getMatch);
