@@ -1,14 +1,131 @@
-Grading at Mon Apr 22 17:13:06 UTC 2019
+Grading at Thu Apr 25 03:42:24 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
 Linking eval.o, deck.o, cards.o, and our tester
 Testing free_deck(deck_t *)
-- Test passed
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==197== Memcheck, a memory error detector
+==197== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==197== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==197== Command: ./tester fd
+==197== Parent PID: 196
+==197== 
+==197== Invalid read of size 8
+==197==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==197==    by 0x402B31: check_free_deck (in /graderhome/work/c4prj1_deck/tester)
+==197==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==197==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==197== 
+==197== 
+==197== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==197==  Access not within mapped region at address 0x0
+==197==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==197==    by 0x402B31: check_free_deck (in /graderhome/work/c4prj1_deck/tester)
+==197==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==197==  If you believe this happened as a result of a stack
+==197==  overflow in your program's main thread (unlikely but
+==197==  possible), you can try to increase the size of the
+==197==  main thread stack using the --main-stacksize= flag.
+==197==  The main thread stack size used in this run was 8388608.
+==197== 
+==197== HEAP SUMMARY:
+==197==     in use at exit: 13,824 bytes in 895 blocks
+==197==   total heap usage: 1,000 allocs, 105 frees, 18,304 bytes allocated
+==197== 
+==197== LEAK SUMMARY:
+==197==    definitely lost: 0 bytes in 0 blocks
+==197==    indirectly lost: 0 bytes in 0 blocks
+==197==      possibly lost: 0 bytes in 0 blocks
+==197==    still reachable: 13,824 bytes in 895 blocks
+==197==         suppressed: 0 bytes in 0 blocks
+==197== Rerun with --leak-check=full to see details of leaked memory
+==197== 
+==197== For counts of detected and suppressed errors, rerun with: -v
+==197== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 Testing add_card_to(deck_t *, card_t)
-- Test passed
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==201== Memcheck, a memory error detector
+==201== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==201== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==201== Command: ./tester act
+==201== Parent PID: 200
+==201== 
+==201== Invalid read of size 8
+==201==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==201==    by 0x404394: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==201==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==201==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==201== 
+==201== 
+==201== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==201==  Access not within mapped region at address 0x0
+==201==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==201==    by 0x404394: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==201==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==201==  If you believe this happened as a result of a stack
+==201==  overflow in your program's main thread (unlikely but
+==201==  possible), you can try to increase the size of the
+==201==  main thread stack using the --main-stacksize= flag.
+==201==  The main thread stack size used in this run was 8388608.
+==201== 
+==201== HEAP SUMMARY:
+==201==     in use at exit: 26,784 bytes in 1,735 blocks
+==201==   total heap usage: 2,696 allocs, 961 frees, 161,856 bytes allocated
+==201== 
+==201== LEAK SUMMARY:
+==201==    definitely lost: 0 bytes in 0 blocks
+==201==    indirectly lost: 0 bytes in 0 blocks
+==201==      possibly lost: 0 bytes in 0 blocks
+==201==    still reachable: 26,784 bytes in 1,735 blocks
+==201==         suppressed: 0 bytes in 0 blocks
+==201== Rerun with --leak-check=full to see details of leaked memory
+==201== 
+==201== For counts of detected and suppressed errors, rerun with: -v
+==201== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 Testing add_empty_card(deck_t *)
-- Test passed
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==205== Memcheck, a memory error detector
+==205== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==205== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==205== Command: ./tester aec
+==205== Parent PID: 204
+==205== 
+==205== Invalid read of size 8
+==205==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==205==    by 0x403FA4: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==205==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==205==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==205== 
+==205== 
+==205== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==205==  Access not within mapped region at address 0x0
+==205==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==205==    by 0x403FA4: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==205==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==205==  If you believe this happened as a result of a stack
+==205==  overflow in your program's main thread (unlikely but
+==205==  possible), you can try to increase the size of the
+==205==  main thread stack using the --main-stacksize= flag.
+==205==  The main thread stack size used in this run was 8388608.
+==205== 
+==205== HEAP SUMMARY:
+==205==     in use at exit: 27,744 bytes in 1,795 blocks
+==205==   total heap usage: 2,120 allocs, 325 frees, 50,688 bytes allocated
+==205== 
+==205== LEAK SUMMARY:
+==205==    definitely lost: 0 bytes in 0 blocks
+==205==    indirectly lost: 0 bytes in 0 blocks
+==205==      possibly lost: 0 bytes in 0 blocks
+==205==    still reachable: 27,744 bytes in 1,795 blocks
+==205==         suppressed: 0 bytes in 0 blocks
+==205== Rerun with --leak-check=full to see details of leaked memory
+==205== 
+==205== For counts of detected and suppressed errors, rerun with: -v
+==205== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 Testing make_deck_exclude(deck_t *)
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h 7d 7c 8s 8h 8d 8c 9s 9h 9d 9c 0s 0h 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
 Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
@@ -41,43 +158,74 @@ Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 
 Expected deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 0d 0c Js Jh Jd Jc Qs Qh Qd Qc 
 Your deck: Ks Kh Kd Kc As Ah Ad Ac 2s 2h 2d 2c 3s 3h 3d 3c 4s 4h 4d 4c 5s 5h 5d 5c 6s 6h 6d 6c 7s 7h Jh Jd Jc Qs Qh Qd Qc 
 Valgrind reported errors:
-==155== Memcheck, a memory error detector
-==155== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==155== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==155== Command: ./tester mde
-==155== Parent PID: 154
-==155== 
-==155== Invalid free() / delete / delete[] / realloc()
-==155==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==155==    by 0x4023B5: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x403B18: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==155==  Address 0x521d190 is 0 bytes inside a block of size 296 free'd
-==155==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==155==    by 0x4023B5: free_deck (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x403B18: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==155==  Block was alloc'd at
-==155==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==155==    by 0x40221A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x40395C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==155==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==155== 
-==155== 
-==155== HEAP SUMMARY:
-==155==     in use at exit: 11,096 bytes in 31 blocks
-==155==   total heap usage: 1,033 allocs, 1,017 frees, 33,792 bytes allocated
-==155== 
-==155== LEAK SUMMARY:
-==155==    definitely lost: 5,696 bytes in 16 blocks
-==155==    indirectly lost: 5,400 bytes in 15 blocks
-==155==      possibly lost: 0 bytes in 0 blocks
-==155==    still reachable: 0 bytes in 0 blocks
-==155==         suppressed: 0 bytes in 0 blocks
-==155== Rerun with --leak-check=full to see details of leaked memory
-==155== 
-==155== For counts of detected and suppressed errors, rerun with: -v
-==155== ERROR SUMMARY: 15 errors from 1 contexts (suppressed: 0 from 0)
+==209== Memcheck, a memory error detector
+==209== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==209== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==209== Command: ./tester mde
+==209== Parent PID: 208
+==209== 
+==209== Invalid read of size 8
+==209==    at 0x4023AE: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Address 0x521d190 is 0 bytes inside a block of size 296 free'd
+==209==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x4023C7: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Block was alloc'd at
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x40221A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x40396C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209== 
+==209== Invalid free() / delete / delete[] / realloc()
+==209==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Address 0x521d020 is 0 bytes inside a block of size 296 free'd
+==209==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Block was alloc'd at
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x40396C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209== 
+==209== Invalid free() / delete / delete[] / realloc()
+==209==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x4023C7: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Address 0x521d190 is 0 bytes inside a block of size 296 free'd
+==209==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x4023C7: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x403B28: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209==  Block was alloc'd at
+==209==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==209==    by 0x40221A: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x40396C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==209==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==209== 
+==209== 
+==209== HEAP SUMMARY:
+==209==     in use at exit: 10,800 bytes in 30 blocks
+==209==   total heap usage: 1,033 allocs, 1,033 frees, 33,792 bytes allocated
+==209== 
+==209== LEAK SUMMARY:
+==209==    definitely lost: 5,400 bytes in 15 blocks
+==209==    indirectly lost: 5,400 bytes in 15 blocks
+==209==      possibly lost: 0 bytes in 0 blocks
+==209==    still reachable: 0 bytes in 0 blocks
+==209==         suppressed: 0 bytes in 0 blocks
+==209== Rerun with --leak-check=full to see details of leaked memory
+==209== 
+==209== For counts of detected and suppressed errors, rerun with: -v
+==209== ERROR SUMMARY: 45 errors from 3 contexts (suppressed: 0 from 0)
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
 Testing with 2 hands
@@ -86,43 +234,124 @@ Testing with 4 hands
 Testing with 5 hands
 Testing with 6 hands
 Valgrind reported errors:
-==159== Memcheck, a memory error detector
-==159== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==159== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==159== Command: ./tester brd
-==159== Parent PID: 158
-==159== 
-==159== Invalid free() / delete / delete[] / realloc()
-==159==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==159==    by 0x403720: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==159==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
-==159==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==159==    by 0x403720: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==159==  Block was alloc'd at
-==159==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==159==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x402386: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x4035BC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==159== 
-==159== Invalid free() / delete / delete[] / realloc()
-==159==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==159==    by 0x40373B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==159==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
-==159==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2936"
-==159== 
-==159== 
-==159== HEAP SUMMARY:
-==159==     in use at exit: 0 bytes in 0 blocks
-==159==   total heap usage: 3,532 allocs, 4,813 frees, 170,960 bytes allocated
-==159== 
-==159== All heap blocks were freed -- no leaks are possible
-==159== 
-==159== For counts of detected and suppressed errors, rerun with: -v
-==159== ERROR SUMMARY: 1281 errors from 2 contexts (suppressed: 0 from 0)
+==213== Memcheck, a memory error detector
+==213== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==213== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==213== Command: ./tester brd
+==213== Parent PID: 212
+==213== 
+==213== Invalid free() / delete / delete[] / realloc()
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x403730: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x5205358 is 8 bytes inside a block of size 408 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x403730: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x402178: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402386: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== Invalid free() / delete / delete[] / realloc()
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x40374B: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x6060e0 is 0 bytes inside data symbol "ans.2936"
+==213== 
+==213== Invalid read of size 4
+==213==    at 0x401E67: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x403579: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4035A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== Invalid read of size 4
+==213==    at 0x401E67: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4021C6: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402386: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4035A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== Invalid read of size 4
+==213==    at 0x401E87: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4021C6: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402386: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x52052b4 is 4 bytes inside a block of size 8 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4035A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== Invalid free() / delete / delete[] / realloc()
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4035A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== Invalid free() / delete / delete[] / realloc()
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4037F7: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Address 0x52052b0 is 0 bytes inside a block of size 8 free'd
+==213==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4023B8: free_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x402394: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x4035CC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213==  Block was alloc'd at
+==213==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==213==    by 0x4035A5: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==213==    by 0x400A78: main (in /graderhome/work/c4prj1_deck/tester)
+==213== 
+==213== 
+==213== HEAP SUMMARY:
+==213==     in use at exit: 0 bytes in 0 blocks
+==213==   total heap usage: 3,532 allocs, 4,855 frees, 170,960 bytes allocated
+==213== 
+==213== All heap blocks were freed -- no leaks are possible
+==213== 
+==213== For counts of detected and suppressed errors, rerun with: -v
+==213== ERROR SUMMARY: 3626 errors from 7 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
-Overall Grade: C
+Overall Grade: F
