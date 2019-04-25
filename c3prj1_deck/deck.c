@@ -123,6 +123,16 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
 }
 
 
+void printDeck(deck_t * deck){
+  printf("\n");
+  for ( int i = 0; i < deck->n_cards; i++){
+    print_card(*(deck->cards[i]));
+    printf(" ");
+  }
+  printf("\n");
+} 
+
+
 deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   //build the deck that remains once the hands have been dealt
   //find total number of cards in all hands
@@ -142,9 +152,9 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
       k++;
     }
   }
+  printDeck(&allHands);
   //biuld deck that remains
   deck_t * ans =  make_deck_exclude(&allHands);
-  //free(allHands.cards);
   free_deck(&allHands);
   return ans;
 }
