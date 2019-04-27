@@ -97,29 +97,31 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   //creates a full deck minus the cards in excluded_cards
   //use card_from_num and deck_contains
   //0-12 hearts, 13-25 diamonds, 26-38 clubs, 39-51 spades
+  //  0. allocate the card_t deck and each card object in it
+  //  1. allocate the deck struct
+  //  2. allocate the cards array in the deck
+  //  3. allocate each card in the array
   int len = 52 - excluded_cards->n_cards;
-  card_t * cards = malloc(len*sizeof(card_t));
-  //static card_t cards[len] = {0, NUM_SUITS};
-
+  
+  card_t ** cards = malloc(len*sizeof(card_t*));
+  
+  deck_t * ans = malloc(sizeof(deck_t));
+  ans->cards = malloc(len*sizeof(card_t*));
+  
   int k = 0;
-  for ( int i = 0; i < 13; i++){
-    for (int j = 0; j < 4; j++){
-      card_t c = card_from_num(i+13*j);
-      if (deck_contains(excluded_cards, c) == 0){
-	cards[k] = c;
+  for ( int i = 0; i < 13; i++ ){
+    for ( int j = 0; j < 4; j++ ){
+      if ( deck_contains(excluded_cards, card_from_num(i+13*j)) == 0){ 
+	cards[k] = malloc(sizeof(card_t));
+	*cards[k] = card_from_num(i+13*j);
+	ans->cards[k] = cards[k];
 	k++;
       }
     }
   }
-  //card_t empty = {0, NUM_SUITS};
-  static deck_t ans;
-  ans.n_cards = len;
-  //ans.cards = &cards;
-  ans.cards = malloc(len*sizeof(card_t*));
-  for (int i = 0; i < len; i++){
-    ans.cards[i] = &cards[i];
-  }
-  return &ans;
+
+  ans->n_cards = len;
+  return ans;
 }
 
 
@@ -136,30 +138,33 @@ void printDeck(deck_t * deck){
 deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   //build the deck that remains once the hands have been dealt
   //find total number of cards in all hands
-  static deck_t allHands;
+  deck_t * allHands = malloc(sizeof(deck_t));
   int size = 0;
   for ( int i = 0; i < n_hands; i++){
     size += hands[i]->n_cards;
   }
   //group all the cards from all the hands in to one
   int k = 0;
-  allHands.cards = malloc(size*sizeof(card_t*));
-  allHands.n_cards = size;
+  allHands->cards = malloc(size*sizeof(card_t*));
+  allHands->n_cards = size;
   for ( int i = 0; i < n_hands; i++){
     for ( int j = 0; j < hands[i]->n_cards; j++){
-      //would hands have duplicate cards??
-      allHands.cards[k] = hands[i]->cards[j];
+      allHands->cards[k] = hands[i]->cards[j];
       k++;
     }
   }
-  printDeck(&allHands);
+  printDeck(allHands);
   //biuld deck that remains
-  deck_t * ans =  make_deck_exclude(&allHands);
-  free_deck(&allHands);
+  deck_t * ans =  make_deck_exclude(allHands);
+  free_deck(allHands);
   return ans;
 }
 
 void free_deck(deck_t * deck){
-  free(*(deck->cards));
+  //free(*(deck->cards));
+  for ( int i = 0; i < deck->n_cards; i++){
+    free((deck->cards[i]));
+  }
   free(deck->cards);
+  free(deck);
 }
