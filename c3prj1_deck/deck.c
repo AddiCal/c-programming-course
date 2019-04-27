@@ -149,12 +149,12 @@ deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   allHands->n_cards = size;
   for ( int i = 0; i < n_hands; i++){
     for ( int j = 0; j < hands[i]->n_cards; j++){
-      allHands->cards[k] = malloc(sizeof(card_t*));
+      //allHands->cards[k] = malloc(sizeof(card_t*));
       allHands->cards[k] = hands[i]->cards[j];
       k++;
     }
   }
-  printDeck(allHands);
+  //printDeck(allHands);
   //biuld deck that remains
   deck_t * ans =  make_deck_exclude(allHands);
   free_deck(allHands);
