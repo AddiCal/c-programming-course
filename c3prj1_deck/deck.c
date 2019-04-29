@@ -93,6 +93,15 @@ card_t * add_empty_card(deck_t * deck){
 }
 
 
+void printDeck(deck_t * deck){
+  printf("\n");
+  for ( int i = 0; i < deck->n_cards; i++){
+    print_card(*(deck->cards[i]));
+    printf(" ");
+  }
+  printf("\n");
+}
+
 deck_t * make_deck_exclude(deck_t * excluded_cards){
   //creates a full deck minus the cards in excluded_cards
   //use card_from_num and deck_contains
@@ -124,40 +133,50 @@ deck_t * make_deck_exclude(deck_t * excluded_cards){
   return ans;
 }
 
-
-void printDeck(deck_t * deck){
-  printf("\n");
-  for ( int i = 0; i < deck->n_cards; i++){
-    print_card(*(deck->cards[i]));
-    printf(" ");
-  }
-  printf("\n");
-} 
-
-
 deck_t * build_remaining_deck( deck_t ** hands, size_t n_hands){
   //build the deck that remains once the hands have been dealt
   //find total number of cards in all hands
-  deck_t * allHands = malloc(sizeof(deck_t));
-  int size = 0;
-  for ( int i = 0; i < n_hands; i++){
-    size += hands[i]->n_cards;
+  //  0. allocate the card_t deck and each card object in it (done before hands??)
+  //     hands is an array of pointers to deck that point to arrays of card_t pointers
+  //  1. allocate the deck struct
+  //  2. allocate the cards array in the deck
+  //  3. allocate each card in the array
+
+  //ans is a one element array where the one element is a struct holidng all of the cards
+  //  from the hands array of pointers to deck_t structs
+  
+  deck_t * all = malloc(sizeof(deck_t));
+  int len = 0;
+
+  for (int i = 0; i < n_hands; i++){
+    len+= hands[i]->n_cards;
   }
-  //group all the cards from all the hands in to one
+
+  card_t ** cards = malloc(len*sizeof(card_t*));
+
+  all->cards = malloc(len*sizeof(card_t*));
+  all->n_cards = len;
+
   int k = 0;
-  allHands->cards = malloc(size*sizeof(card_t*));
-  allHands->n_cards = size;
-  for ( int i = 0; i < n_hands; i++){
-    for ( int j = 0; j < hands[i]->n_cards; j++){
-      //allHands->cards[k] = malloc(sizeof(card_t*));
-      allHands->cards[k] = hands[i]->cards[j];
+  for (int i = 0; i < n_hands; i++){
+    for (int j = 0; j < hands[i]->n_cards; j++){
+      cards[k] = malloc(sizeof(card_t));
+      *cards[k] = *(hands[i]->cards[j]);
+      all->cards[k] = cards[k];
       k++;
     }
   }
-  //printDeck(allHands);
-  //biuld deck that remains
-  deck_t * ans =  make_deck_exclude(allHands);
-  free_deck(allHands);
+
+  printDeck(all);
+
+  deck_t * ans = make_deck_exclude(all);
+  free_deck(all);
+  /*
+  for ( int i = 0; i < len; i++){
+    free(cards[i]);
+  }
+  free(cards);
+  */
   return ans;
 }
 
