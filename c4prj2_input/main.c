@@ -5,6 +5,7 @@
 #include "deck.h"
 #include "cards.h"
 #include "future.h"
+#include "input.h"
 
 void print_deck(deck_t * deck){
   printf("\n");
@@ -15,7 +16,7 @@ void print_deck(deck_t * deck){
   printf("\n");
 } 
 
-int main(){
+int main( int argc, char ** argv){
   //built test deck and add empty cards
   card_t ** cards = malloc(52*sizeof(card_t*));
   int len = 5;
@@ -81,8 +82,31 @@ int main(){
 
   //===TEST3===
   printf("===TEST3===\n");
+
+  if ( argc != 2 ){
+    fprintf(stderr, "USAGE: program_name input_file\n");
+    return EXIT_FAILURE;
+  }
+
+  FILE * f = fopen(argv[1], "r");
+  if ( f == NULL ){
+    fprintf(stderr, "ERROR: could not open file\n");
+    return EXIT_FAILURE;
+  }
+
+  size_t n_hands = 0;
+  future_cards_t * fc2 = malloc(sizeof(future_cards_t));
+  fc2->decks = malloc(sizeof(deck_t));
   
-  
+  deck_t ** read = malloc(sizeof(deck_t*));
+  read = read_input(f, &n_hands, fc2);
+
+  printf("read: %zu\n", read[0]->n_cards);
+
+  if ( fclose(f) != 0 ){
+    perror("ERROR: could not close file\n");
+    return EXIT_FAILURE;
+  }
   //===FREES
   free(dfc1->cards);
   free(dfc1);
