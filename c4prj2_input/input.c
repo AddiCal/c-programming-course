@@ -76,17 +76,17 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   
   //1. getline setup
   size_t size = 0;
-  //size_t len = 0;
   char * line = NULL;
   int i = 0;
   //fill in first element
   
   while ( getline(&line, &size, f) >= 0){
-    //printf("len: %zu\n", len);
-    printf("line: %s\n", line);
     //parse line in to hands
     if ( i > 0 ) {
       ans = realloc(ans, (i+1)*sizeof(deck_t*));
+    }
+    if ( strcmp(line, "\n") == 0 ){
+      continue;
     }
     ans[i] = hand_from_string(line, fc);
     line = NULL;

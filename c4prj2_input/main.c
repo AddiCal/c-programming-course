@@ -103,6 +103,11 @@ int main( int argc, char ** argv){
 
   printf("read: %zu\n", read[0]->n_cards);
 
+  for (int i = 0; i < n_hands; i++){
+    print_deck(read[i]);
+    printf("\n");
+  }
+  
   if ( fclose(f) != 0 ){
     perror("ERROR: could not close file\n");
     return EXIT_FAILURE;
