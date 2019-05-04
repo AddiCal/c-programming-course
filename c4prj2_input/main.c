@@ -10,6 +10,10 @@
 void print_deck(deck_t * deck){
   printf("\n");
   for ( int i = 0; i < deck->n_cards; i++){
+    if ( deck->cards[i]->suit == NUM_SUITS ){
+      printf("?? ");
+      continue;
+    }
     print_card(*(deck->cards[i]));
     printf(" ");
   }

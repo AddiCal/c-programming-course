@@ -14,6 +14,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 
   deck_t *  ans = malloc(sizeof(deck_t));
   ans->cards = malloc(sizeof(card_t*));
+  ans->n_cards = 0;
 
   //copy const string to something we can play with
   char temp[strlen(str)+1];
@@ -23,22 +24,28 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   int i = 0;
   //get cards by splitting on spaces
   char * strCard = strtok(temp, " ");
+  char lastPtr = strCard[0];
   while ( *ptr != '\n'){
-    //57 is DEC for the ascii #9, 97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters)
-    if ( (*ptr == ' ') || (*ptr > 96) ){
+    //57 is DEC for the ascii#9, 97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters)
+    if ( (*ptr == ' ') || (*ptr > 96) || (lastPtr == '?' ) ){ // || *(ptr-1) == '?') ){
       ptr++;
+      lastPtr = *ptr;
       continue;
     }
     if ( i > 0 ){
       strCard = strtok(NULL, " ");
     }
-
+    printf("top new_card: %zu, index: %d\n", ans->n_cards, i);
     //deal with future cards
     if ( strCard[0] == '?' ){
       //add empty card //fill in with future card with index strCard[1] (convert to int)
-      int index = atoi(temp);
-      card_t * spot = add_empty_card(ans);
-      add_future_card(fc, index, spot);
+      //char temp[2];
+      //temp[0] = strCard[1];
+      //temp[1] = '\0';
+      //int index = atoi(temp);
+      add_empty_card(ans);
+      //card_t * spot = add_empty_card(ans);
+      //add_future_card(fc, index, spot);
     }
 
     //add regular card to hand
@@ -49,7 +56,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       card_t * card = malloc(sizeof(card_t));
       *card = card_from_letters(strCard[0], strCard[1]);
       ans->cards[i] = card;
+      ans->n_cards++;
     }
+    printf("ans[%d] = suit: %d , value: %d \n", i, ans->cards[i]->suit, ans->cards[i]->value);
+    lastPtr = strCard[0];
+    printf("bottom ncard: %zu \n", ans->n_cards);
     i++;
     ptr++;
   }
@@ -57,7 +68,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     fprintf(stderr, "ERROR: hand must be at least 5 cards\n");
     exit(EXIT_FAILURE);
   }
-  ans->n_cards = i;
   return ans;
 }
 
