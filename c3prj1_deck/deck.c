@@ -78,7 +78,7 @@ void add_card_to( deck_t * deck, card_t c){
   int newLen = deck->n_cards + 1;
   deck->cards = realloc(deck->cards, newLen*sizeof(card_t *));
   deck->cards[newLen-1] = &card[0];
-  printf("added %d: value: %d, suit: %d\n", newLen-1, deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
+  //printf("added %d: value: %d, suit: %d\n", newLen-1, deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
   deck->n_cards++;
 }
 
@@ -88,8 +88,8 @@ card_t * add_empty_card(deck_t * deck){
   empty.value = 0;
   empty.suit = NUM_SUITS;
   add_card_to(deck, empty);
-  //card_t * ans = deck->cards[deck->n_cards-1];
-  return deck->cards[deck->n_cards-1];
+  card_t * ans = deck->cards[deck->n_cards-1];
+  return ans;
 }
 
 
