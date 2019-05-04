@@ -101,6 +101,9 @@ int main( int argc, char ** argv){
   size_t n_hands = 0;
   future_cards_t * fc2 = malloc(sizeof(future_cards_t));
   fc2->decks = malloc(sizeof(deck_t));
+  fc2->decks[0].cards = malloc(sizeof(card_t*));
+  fc2->decks[0].n_cards = 0;
+  fc2->n_decks = 0;
   
   deck_t ** read = malloc(sizeof(deck_t*));
   read = read_input(f, &n_hands, fc2);

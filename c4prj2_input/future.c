@@ -14,18 +14,23 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //if the array does not exist up till that index make the array big enough and fill it with NULL decks
   //fc struct: deck_t * decks, size_t n_decks
 
-  //cases: add ptr to existing index, add ptr to index much larger than existing, add ptr to next index
+  //cases: add ptr to empty fc?? (should be covered by add index much larger or add next index)
+  //cases: add ptr to existing index, add ptr to next index,  add ptr to index much larger than existing
   if ( index <= (fc->n_decks - 1) ){
-    //add one element to the cards array of the existing index deck_t
-    fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t *));
+    if ( fc->decks[index].n_cards > 0 ){
+      //add one element to the cards array of the existing index deck_t
+      fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t *));
+    }
     //make the last element in this array the input ptr
     fc->decks[index].cards[fc->decks[index].n_cards] = ptr;
     //increment the length of the cards array
     fc->decks[index].n_cards++;
   }
   else if ( index == fc->n_decks ){
-    //reallocate fc->decks array to be one element bigger
-    fc->decks = realloc(fc->decks, (fc->n_decks + 1)*sizeof(deck_t));
+    if ( fc->n_decks > 0 ){
+      //reallocate fc->decks array to be one element bigger
+      fc->decks = realloc(fc->decks, (fc->n_decks + 1)*sizeof(deck_t));
+    }
     //build a new deck as usual
     deck_t * new = malloc(sizeof(deck_t));
     new->cards = malloc(sizeof(card_t*));
@@ -59,7 +64,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     new->n_cards = 1;
     //add the new deck to the future decks array
     fc->decks[fc->n_decks] = *new;
-    fc->n_decks++;
+    fc->n_decks += (index-fc->n_decks);
   }
 }
 
