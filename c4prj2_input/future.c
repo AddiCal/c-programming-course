@@ -15,8 +15,8 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //fc struct: deck_t * decks, size_t n_decks
 
   //cases: add ptr to empty fc?? (should be covered by add index much larger or add next index)
-  //cases: add ptr to existing index, add ptr to next index,  add ptr to index much larger than existing
-  if ( index <= (fc->n_decks - 1) ){
+  //cases: add ptr to existing index, add ptr to index much larger than existing,  add ptr to next index,
+  if ( index == (fc->n_decks - 1) ){
     if ( fc->decks[index].n_cards > 0 ){
       //add one element to the cards array of the existing index deck_t
       fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t *));
@@ -26,7 +26,45 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     //increment the length of the cards array
     fc->decks[index].n_cards++;
   }
+  else if ( (index > fc->n_decks) ){
+    //create null deck (did i write a fxn that does this already???)
+    deck_t * empty = malloc(sizeof(deck_t));
+    empty->cards = malloc(sizeof(card_t *));
+    empty->cards = NULL;
+    empty->n_cards = 0;
+
+    //fill 0th element first if empty
+    if ( fc->n_decks == 0 ) {
+      fc->decks[0] = *empty;
+      fc->n_decks = 1;
+    }
+    
+    //reallocate fc->decks array to be the size of index + 1
+    fc->decks = realloc(fc->decks, (index + 1)*sizeof(deck_t));
+    
+    //find out what indexes need to be filled with null
+    // null should be everything from i =  n_decks to i = (index - 1)
+    if ( index == fc->n_decks ) {
+      goto fillNext;
+    }
+    //fill empty decks with null
+    for ( int i = fc->n_decks; i < index; i++){
+      //point the deck element to null and fill in n_cards with 0
+      fc->decks[i] = *empty;
+    }
+    
+    //fill deck to index now
+    deck_t * new = malloc(sizeof(deck_t));
+    new->cards = malloc(sizeof(card_t*));
+    //fill the new deck with the ptr to the empty card
+    new->cards[0] = ptr;
+    new->n_cards = 1;
+    //add the new deck to the future decks array
+    fc->decks[fc->n_decks] = *new;
+    fc->n_decks += (index-fc->n_decks);
+  }
   else if ( index == fc->n_decks ){
+  fillNext:
     if ( fc->n_decks > 0 ){
       //reallocate fc->decks array to be one element bigger
       fc->decks = realloc(fc->decks, (fc->n_decks + 1)*sizeof(deck_t));
@@ -40,31 +78,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     //add the new deck to the future decks array
     fc->decks[fc->n_decks] = *new;
     fc->n_decks++;
-  }
-  else if ( index > (fc->n_decks) ){
-    //reallocate fc->decks array to be the size of index + 1
-    fc->decks = realloc(fc->decks, (index + 1)*sizeof(deck_t));
-    //find out what indexes need to be filled with null
-    // null should be everything from i =  n_decks to i = (index - 1)
-
-    //create null deck (did i write a fxn that does this already???)
-    deck_t * empty = malloc(sizeof(deck_t));
-    empty->cards = malloc(sizeof(card_t *));
-    empty->cards = NULL;
-    empty->n_cards = 0;
-    
-    for ( int i = fc->n_decks; i < index; i++){
-      //point the deck element to null and fill in n_cards with 0
-      fc->decks[i] = *empty;
-    }
-    deck_t * new = malloc(sizeof(deck_t));
-    new->cards = malloc(sizeof(card_t*));
-    //fill the new deck with the ptr to the empty card
-    new->cards[0] = ptr;
-    new->n_cards = 1;
-    //add the new deck to the future decks array
-    fc->decks[fc->n_decks] = *new;
-    fc->n_decks += (index-fc->n_decks);
   }
 }
 
