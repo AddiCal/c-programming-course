@@ -12,6 +12,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   //future cards need to be filled in with an empty card
   //use add_card_to, card_from_letter, and future fxns to write this
 
+  //set up deck
   deck_t *  ans = malloc(sizeof(deck_t));
   ans->cards = malloc(sizeof(card_t*));
   ans->n_cards = 0;
@@ -20,32 +21,37 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   char temp[strlen(str)+1];
   strcpy(temp, str);
 
+  //track place in file
   const char * ptr = str;
   int i = 0;
+  
   //get cards by splitting on spaces
   char * strCard = strtok(temp, " ");
+
+  //track character at previous index to keep track of '?'
   char lastPtr = strCard[0];
+  
   while ( *ptr != '\n'){
-    //57 is DEC for the ascii#9, 97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters)
-    if ( (*ptr == ' ') || (*ptr > 96) || (lastPtr == '?' ) ){ // || *(ptr-1) == '?') ){
+    //97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters and the number that comes after a '?')
+    if ( (*ptr == ' ') || (*ptr > 96) || (lastPtr == '?' ) ){
       ptr++;
       lastPtr = *ptr;
       continue;
     }
+    
     if ( i > 0 ){
       strCard = strtok(NULL, " ");
     }
-    printf("top new_card: %zu, index: %d\n", ans->n_cards, i);
+
     //deal with future cards
     if ( strCard[0] == '?' ){
       //add empty card //fill in with future card with index strCard[1] (convert to int)
-      //char temp[2];
-      //temp[0] = strCard[1];
-      //temp[1] = '\0';
-      //int index = atoi(temp);
-      add_empty_card(ans);
-      //card_t * spot = add_empty_card(ans);
-      //add_future_card(fc, index, spot);
+      char temp[2];
+      temp[0] = strCard[1];
+      temp[1] = '\0';
+      int index = atoi(temp);
+      card_t * spot = add_empty_card(ans);
+      add_future_card(fc, index, spot);
     }
 
     //add regular card to hand
@@ -58,16 +64,18 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       ans->cards[i] = card;
       ans->n_cards++;
     }
-    printf("ans[%d] = suit: %d , value: %d \n", i, ans->cards[i]->suit, ans->cards[i]->value);
+    
     lastPtr = strCard[0];
-    printf("bottom ncard: %zu \n", ans->n_cards);
     i++;
     ptr++;
   }
-  if ( i < 5 ){
+  
+  //return error if hand has less than 5 cards
+  if ( ans->n_cards < 5 ){
     fprintf(stderr, "ERROR: hand must be at least 5 cards\n");
     exit(EXIT_FAILURE);
   }
+  
   return ans;
 }
 
