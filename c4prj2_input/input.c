@@ -64,7 +64,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       ans->cards[i] = card;
       ans->n_cards++;
     }
-    printf(" ans[%d]: stuff probably\n", i);
+    //printf(" ans[%d]: stuff probably\n", i);
     lastPtr = strCard[0];
     i++;
     ptr++;
@@ -97,7 +97,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   char * line = NULL;
   int i = 0;
   //fill in first element
-  printf("hands from input file:\n");
+  //printf("hands from input file:\n");
   while ( getline(&line, &size, f) >= 0){
     printf("%s\n", line);
     //parse line in to hands
