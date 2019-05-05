@@ -18,18 +18,29 @@ void print_deck(deck_t * deck){
     printf(" ");
   }
   printf("\n");
-} 
+}
+
+void print_fc(future_cards_t * fc){
+  printf("fc->n_decks: %zu\n", fc->n_decks); 
+  for (int i = 0; i < fc->n_decks; i++){
+    printf("index: %d", i);
+    print_deck(&(fc->decks[i]));
+  }
+}
 
 int main( int argc, char ** argv){
   //built test deck and add empty cards
+  //==array of 52 cards
   card_t ** cards = malloc(52*sizeof(card_t*));
+  //==deck of cards used to add empty cards
   int len = 5;
   deck_t * ans = malloc(sizeof(deck_t));
   ans->cards = malloc(len*sizeof(card_t*));
-
+  //==secondary deck of cards used to fill fc
   deck_t * test2 = malloc(sizeof(deck_t));
   test2->cards = malloc(len*sizeof(card_t*));
-  
+
+  //fill in the decks with 5 cards
   int k = 0;
   for ( int i = 0; i < 13; i++ ){
     for ( int j = 0; j < 4; j++ ){
@@ -45,45 +56,17 @@ int main( int argc, char ** argv){
   }
   ans->n_cards = len;
   test2->n_cards = len;
-  
-  printf("ans: \n");
+
   print_deck(ans);
-  printf("test2: \n");
   print_deck(test2);
+
+  //==build fc deck (hold the pointers to each future card in the hands according to their fc index)
+  future_cards_t fc;
+  fc.decks = malloc(sizeof(deck_t));
+  fc.decks->cards = malloc(sizeof(card_t*));
+  fc.decks->n_cards = 0;
+  fc.n_decks = 0;
   
-  //===TEST1===
-
-  printf("===TEST1===\n");
-
-  //get ptr to empty card
-  card_t * spot1 = add_empty_card(ans);
-  card_t * spot2 = add_empty_card(ans);
-  card_t * spot3 = add_empty_card(ans);
-
-  //create future card struct
-  future_cards_t * fc = malloc(sizeof(future_cards_t));
-  fc->decks = malloc(sizeof(deck_t));
-  //make struct for deck
-  deck_t * dfc1 = malloc(sizeof(deck_t));
-  dfc1->cards = malloc(sizeof(card_t*));
-  dfc1->cards[0] = spot1;
-  dfc1->n_cards = 1;
-  //assign fc to struct
-  fc->decks[0] = *dfc1;
-  fc->n_decks = 1;
-
-  printf("wow: %d\n", spot2->value);
-  printf("wow: %d\n", spot3->value);
-  //takes future cards struct that i have to make, index, and ptr to empty card
-  add_future_card(fc, 1, spot1);
-
-  //===TEST2===
-  printf("===TEST2===\n");
-  future_cards_from_deck(test2, fc);
-
-  int x = 2;
-  printf("cool: %d\n", x);
-
   //===TEST3===
   printf("===TEST3===\n");
 
@@ -99,20 +82,24 @@ int main( int argc, char ** argv){
   }
 
   size_t n_hands = 0;
-  future_cards_t * fc2 = malloc(sizeof(future_cards_t));
-  fc2->decks = malloc(sizeof(deck_t));
-  fc2->decks[0].cards = malloc(sizeof(card_t*));
-  fc2->decks[0].n_cards = 0;
-  fc2->n_decks = 0;
+  deck_t ** read = read_input(f, &n_hands, &fc);
   
-  deck_t ** read = malloc(sizeof(deck_t*));
-  read = read_input(f, &n_hands, fc2);
-
-  printf("read: %zu\n", read[0]->n_cards);
-
+  printf("\n===hands from file: \n");
   for (int i = 0; i < n_hands; i++){
     print_deck(read[i]);
-    printf("\n");
+  }
+
+  future_cards_from_deck(ans, &fc);
+
+  printf("\n===fc cards filled in\n");
+  print_fc(&fc);
+
+  printf("\n===ans deck\n");
+  print_deck(ans);
+
+  printf("\n===hands filled in with ans: \n");
+  for (int i = 0; i < n_hands; i++){
+    print_deck(read[i]);
   }
   
   if ( fclose(f) != 0 ){
@@ -120,13 +107,6 @@ int main( int argc, char ** argv){
     return EXIT_FAILURE;
   }
   //===FREES
-  free(dfc1->cards);
-  free(dfc1);
-  //free(fc->decks[0].cards);
-  free(fc->decks[1].cards);
-  //free(fc->decks[1]);
-  free(fc->decks);
-  free(fc);
   
   //--might need to change this if ans changes or becomes an array of arrays
   for ( int i = 0; i < 52; i++){
