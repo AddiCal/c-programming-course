@@ -61,11 +61,12 @@ int main( int argc, char ** argv){
   print_deck(test2);
 
   //==build fc deck (hold the pointers to each future card in the hands according to their fc index)
-  future_cards_t fc;
-  fc.decks = malloc(sizeof(deck_t));
-  fc.decks->cards = malloc(sizeof(card_t*));
-  fc.decks->n_cards = 0;
-  fc.n_decks = 0;
+  future_cards_t *fc = malloc(sizeof(future_cards_t));
+  fc->decks = malloc(sizeof(deck_t));
+  fc->decks->cards = malloc(sizeof(card_t*));
+  size_t * ncards = malloc(sizeof(size_t));
+  fc->decks->n_cards = *ncards;
+  fc->n_decks = 0;
   
   //===TEST3===
   printf("===TEST3===\n");
@@ -82,17 +83,17 @@ int main( int argc, char ** argv){
   }
 
   size_t n_hands = 0;
-  deck_t ** read = read_input(f, &n_hands, &fc);
+  deck_t ** read = read_input(f, &n_hands, fc);
   
   printf("\n===hands from file: \n");
   for (int i = 0; i < n_hands; i++){
     print_deck(read[i]);
   }
 
-  future_cards_from_deck(ans, &fc);
+  future_cards_from_deck(ans, fc);
 
   printf("\n===fc cards filled in\n");
-  print_fc(&fc);
+  print_fc(fc);
 
   printf("\n===ans deck\n");
   print_deck(ans);
