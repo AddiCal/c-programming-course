@@ -64,8 +64,13 @@ int main( int argc, char ** argv){
   future_cards_t *fc = malloc(sizeof(future_cards_t));
   fc->decks = malloc(sizeof(deck_t));
   fc->decks->cards = malloc(sizeof(card_t*));
-  size_t * ncards = malloc(sizeof(size_t));
-  fc->decks->n_cards = *ncards;
+
+  card_t * empty = malloc(sizeof(card_t));
+  empty->value = 0;
+  empty->suit = NUM_SUITS;
+
+  fc->decks->cards = &empty;
+  fc->decks->n_cards = 0;
   fc->n_decks = 0;
   
   //===TEST3===
