@@ -65,11 +65,12 @@ int main( int argc, char ** argv){
   fc->decks = malloc(sizeof(deck_t));
   fc->decks->cards = malloc(sizeof(card_t*));
 
-  card_t * empty = malloc(sizeof(card_t));
-  empty->value = 0;
-  empty->suit = NUM_SUITS;
+  card_t ** empty = malloc(sizeof(card_t*));
+  empty[0] = malloc(sizeof(card_t));
+  empty[0]->value = 0;
+  empty[0]->suit = NUM_SUITS;
 
-  fc->decks->cards = &empty;
+  fc->decks->cards[0] = empty[0];
   fc->decks->n_cards = 0;
   fc->n_decks = 0;
   

@@ -11,6 +11,7 @@ deck_t * empty_deck(){
   
   card_t **cards = malloc(sizeof(card_t*));
   cards[0] = malloc(sizeof(card_t));
+  //cards[0] =  NULL;
   cards[0]->value = 0;
   cards[0]->suit = NUM_SUITS;
 
@@ -18,6 +19,28 @@ deck_t * empty_deck(){
   empty->n_cards = 0;
   return empty;
 }
+
+void printDECK(deck_t * deck){
+  printf("\n");
+  for ( int i = 0; i < deck->n_cards; i++){
+    if ( deck->cards[i]->suit == NUM_SUITS ){
+      printf("?? ");
+      continue;
+    }
+    print_card(*(deck->cards[i]));
+    printf(" ");
+  }
+  printf("\n");
+}
+
+void printFC(future_cards_t * fc){
+  printf("fc->n_decks: %zu\n", fc->n_decks); 
+  for (int i = 0; i < fc->n_decks; i++){
+    printf("index: %d", i);
+    printDECK(&(fc->decks[i]));
+  }
+}
+
 
 
 void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
@@ -27,13 +50,36 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //if the array does not exist up till that index make the array big enough and fill it with NULL decks
   //fc struct: deck_t * decks, size_t n_decks
 
+  //===CASE0: FILL EMPTY FC===
+  if ( fc->n_decks == 0 ){
+    
+  }
   //===CASE1: FILL EXISTING INDEX===
   if ( index < fc->n_decks ){
-    if ( fc->decks[index].n_cards > 0 ){
-      fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
+    //if deck is empty you also have to create a new deck and replace the old one
+    //if existing deck is empty, create a new deck and replace the old one
+    if ( fc->decks[index].n_cards == 0 ) {
+      deck_t * newDeck = malloc(sizeof(deck_t));
+      newDeck->cards = malloc(sizeof(card_t*));
+
+      card_t ** newCards = malloc(sizeof(card_t*));
+      newCards[0] = malloc(sizeof(card_t));
+      newCards[0] = ptr;
+
+      newDeck->cards[0] = newCards[0];
+      newDeck->n_cards = 1;
+
+      fc->decks[index] = newDeck[0];
+      fc->decks[index].n_cards = 1;
     }
-    fc->decks[index].cards[fc->decks[index].n_cards] = ptr;
-    fc->decks[index].n_cards++;
+    //if existing deck is not empty, update it the way you'd think
+    else {
+      //make cards array larger and add card
+      //printf("index: %zu, n_decks: %zu, n_cards: %zu\n", index, fc->n_decks, fc->decks[index].n_cards);
+      fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
+      fc->decks[index].cards[fc->decks[index].n_cards] = ptr;
+      fc->decks[index].n_cards++;
+    }    
   }
   
   //===CASE2: FILL LARGER INDEX===
@@ -66,7 +112,9 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
     fc->decks[index] = *newDeck;
     fc->n_decks = index+1;
-  }  
+  }
+  printf("finished add_future_card fxn\n");
+  printFC(fc);
 }
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
@@ -83,6 +131,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
       continue;
     }
     for (int j = 0; j < fc->decks[i].n_cards; j++){
+      printf("deck: %d, card: %d\n", i, j);
       fc->decks[i].cards[j]->value = deck->cards[i]->value;
       fc->decks[i].cards[j]->suit = deck->cards[i]->suit;
       //deck->cards[i] = fc->decks[i].cards[j];
