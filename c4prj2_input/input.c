@@ -99,7 +99,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   //fill in first element
   //printf("hands from input file:\n");
   while ( getline(&line, &size, f) >= 0){
-    printf("%s\n", line);
+    //printf("%s\n", line);
     //parse line in to hands
     if ( i > 0 ) {
       ans = realloc(ans, (i+1)*sizeof(deck_t*));
