@@ -46,9 +46,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     //deal with future cards
     if ( strCard[0] == '?' ){
       //add empty card //fill in with future card with index strCard[1] (convert to int)
-      char temp[2];
-      temp[0] = strCard[1];
-      temp[1] = '\0';
+      //temp[0] = strCard[1];
+      //temp[1] = '\0';
+      char * rest = strCard;
+      char * temp = strtok_r(rest, "?", &rest);
       int index = atoi(temp);
       card_t * spot = add_empty_card(ans);
       add_future_card(fc, index, spot);

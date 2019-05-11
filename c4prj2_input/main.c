@@ -33,9 +33,9 @@ int main( int argc, char ** argv){
   //==array of 52 cards
   card_t ** cards = malloc(52*sizeof(card_t*));
   //==deck of cards used to add empty cards
-  int len = 5;
+  int len = 10;
   deck_t * ans = malloc(sizeof(deck_t));
-  ans->cards = malloc(len*sizeof(card_t*));
+  ans->cards = malloc(52*sizeof(card_t*));
   //==secondary deck of cards used to fill fc
   deck_t * test2 = malloc(sizeof(deck_t));
   test2->cards = malloc(len*sizeof(card_t*));
@@ -50,11 +50,14 @@ int main( int argc, char ** argv){
     }
   }
 
-  for ( int i = 0; i < 5; i++){
-    ans->cards[i] = cards[(i+3)*(5)];
-    test2->cards[i] = cards[(i+4)*6];
+  for ( int i = 0; i < len; i++){
+    //ans->cards[i] = cards[(i+3)*(4)];
+    test2->cards[i] = cards[(i)*4];
   }
-  ans->n_cards = len;
+  for ( int i = 0; i < 52; i++){
+    ans->cards[i] = cards[i];
+  }
+  ans->n_cards = 52;
   test2->n_cards = len;
 
   print_deck(ans);
