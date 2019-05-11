@@ -89,10 +89,10 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   
   //===CASE2: FILL LARGER INDEX===
   if ( (index >= fc->n_decks) ) {
-    deck_t * empty = empty_deck();
+    //deck_t * empty = empty_deck();
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
-      fc->decks[0] = *empty;
+      //fc->decks[0] = *empty;
       fc->n_decks = 1;
     }
     if ( index > 0 ) {
