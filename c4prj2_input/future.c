@@ -97,11 +97,11 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     }
     if ( index > 0 ) {
       //reallocated fc decks array to be index+1 elements larger
-      fc->decks = realloc(fc->decks, (index+1)*sizeof(deck_t));
+      //fc->decks = realloc(fc->decks, (index+1)*sizeof(deck_t));
     }
     //fill in fc with empty decks except for index
     for ( int i = fc->n_decks; i < index; i++) {
-      fc->decks[i] = *empty;
+      //fc->decks[i] = *empty;
     }
 
     //fill in fc at index with input ptr
@@ -115,7 +115,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     newDeck->cards[0] = newCards[0];
     newDeck->n_cards = 1;
 
-    fc->decks[index] = *newDeck;
+    //fc->decks[index] = *newDeck;
     fc->n_decks = index+1;
   }
   //printf("finished add_future_card fxn\n");
