@@ -80,9 +80,9 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       newCards[0] = malloc(sizeof(card_t));
       newCards[0] = ptr;
       if ( fc->decks[index].n_cards > 0 ){
-	//fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
+	fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
 	}
-      //fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
+      fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
       fc->decks[index].n_cards++;
     }    
   }
@@ -97,7 +97,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     }
     if ( index > 0 ) {
       //reallocated fc decks array to be index+1 elements larger
-      //fc->decks = realloc(fc->decks, (index+1)*sizeof(deck_t));
+      fc->decks = realloc(fc->decks, (index+1)*sizeof(deck_t));
     }
     //fill in fc with empty decks except for index
     for ( int i = fc->n_decks; i < index; i++) {
@@ -115,7 +115,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     newDeck->cards[0] = newCards[0];
     newDeck->n_cards = 1;
 
-    //fc->decks[index] = *newDeck;
+    fc->decks[index] = *newDeck;
     fc->n_decks = index+1;
   }
   //printf("finished add_future_card fxn\n");
@@ -127,19 +127,20 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   //  so index 0 of the deck corresponds to ?0 in future cards
   //point the pointers in fc to the cards in deck??
   //print error message??
+  /*
   if( deck->n_cards < fc->n_decks){
     printf("ERROR: not enough cards in deck to fill future cards\n");
     exit(EXIT_FAILURE);
   }
   for (int i = 0; i < fc->n_decks; i++){
-    //if (fc->decks[i].n_cards == 0){
-    //continue;
-    //}
+    if (fc->decks[i].n_cards == 0){
+      continue;
+    }
     for (int j = 0; j < fc->decks[i].n_cards; j++){
       //printf("deck: %d, card: %d\n", i, j);
-      //fc->decks[i].cards[j]->value = deck->cards[i]->value;
-      //fc->decks[i].cards[j]->suit = deck->cards[i]->suit;
-      //deck->cards[i] = fc->decks[i].cards[j];
+      fc->decks[i].cards[j]->value = deck->cards[i]->value;
+      fc->decks[i].cards[j]->suit = deck->cards[i]->suit;
+      deck->cards[i] = fc->decks[i].cards[j];
     }
-  }
+    }*/
 }
