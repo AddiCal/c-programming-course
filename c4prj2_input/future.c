@@ -50,7 +50,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //adds a ptr to the future cards for the given index
   //fc is the deck of future cards, index is the number of the future card, ptr is the pointer to the existing placeholder for that card
   //  (a ptr already added with add_empty_card)
-  //if the array does not exist up till that index make the array big enough and fill it with NULL decks
+  //if the array does not exist up till that index make the array big enough and fill it with NULLdecks
   //fc struct: deck_t * decks, size_t n_decks
 
   //===CASE0: FILL EMPTY FC===
@@ -76,8 +76,12 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     else {
       //make cards array larger and add card
       //printf("index: %zu, n_decks: %zu, n_cards: %zu\n", index, fc->n_decks, fc->decks[index].n_cards);
+      card_t ** newCards = malloc(sizeof(card_t*));
+      newCards[0] = malloc(sizeof(card_t));
+      newCards[0] = ptr;
+
       fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
-      fc->decks[index].cards[fc->decks[index].n_cards] = ptr;
+      fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
       fc->decks[index].n_cards++;
     }    
   }
