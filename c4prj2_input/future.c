@@ -80,9 +80,9 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       newCards[0] = malloc(sizeof(card_t));
       newCards[0] = ptr;
       if ( fc->decks[index].n_cards > 0 ){
-	  fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
+	//fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
 	}
-      fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
+      //fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
       fc->decks[index].n_cards++;
     }    
   }
