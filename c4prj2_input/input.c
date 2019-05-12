@@ -17,6 +17,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   ans->cards = malloc(sizeof(card_t*));
   ans->n_cards = 0;
 
+  //card_t ** cards = malloc(sizeof(card_t*));
+  //int lenCards = 0;
+  
   //copy const string to something we can play with
   char temp[strlen(str)+1];
   strcpy(temp, str);
@@ -28,14 +31,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   //get cards by splitting on spaces
   char * strCard = strtok(temp, " ");
 
-  //track character at previous index to keep track of '?'
-  char lastPtr = strCard[0];
-  
   while ( *ptr != '\n'){
     //97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters and the number that comes after a '?')
-    if ( (*ptr == ' ') || (*ptr > 96) || (lastPtr == '?' ) ){
+    if ( (*ptr == ' ') || (*ptr > 96) ){ // || (lastCard[0] == '?' ) ){
       ptr++;
-      lastPtr = *ptr;
+      //lastPtr = *ptr;
       continue;
     }
     
@@ -45,14 +45,22 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 
     //deal with future cards
     if ( strCard[0] == '?' ){
-      //add empty card //fill in with future card with index strCard[1] (convert to int)
-      //temp[0] = strCard[1];
-      //temp[1] = '\0';
+      //add empty card //fill in with future card with index 
       char * rest = strCard;
       char * temp = strtok_r(rest, "?", &rest);
       int index = atoi(temp);
       card_t * spot = add_empty_card(ans);
       add_future_card(fc, index, spot);
+      int len = strlen(temp);
+      int count = 0;
+      for ( int i = 0; i < len; i++ ){
+	if ( temp[i] == '\n' ){
+	  count++;
+	}
+      }
+      ptr+=(len+1-count);
+      i++;
+      continue;
     }
 
     //add regular card to hand
@@ -60,17 +68,15 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       if ( i > 0 ){
 	ans->cards = realloc(ans->cards, (i+1)*sizeof(card_t*));
       }
-      card_t * card = malloc(sizeof(card_t));
-      *card = card_from_letters(strCard[0], strCard[1]);
-      ans->cards[i] = card;
+      card_t * new = malloc(sizeof(card_t));
+      new[0] = card_from_letters(strCard[0], strCard[1]);
+
+      ans->cards[i] = &new[0];
       ans->n_cards++;
     }
-    //printf(" ans[%d]: stuff probably\n", i);
-    lastPtr = strCard[0];
     i++;
     ptr++;
   }
-  
   //return error if hand has less than 5 cards
   if ( ans->n_cards < 5 ){
     fprintf(stderr, "ERROR: hand must be at least 5 cards\n");
@@ -100,7 +106,6 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   //fill in first element
   //printf("hands from input file:\n");
   while ( getline(&line, &size, f) >= 0){
-    //printf("%s\n", line);
     //parse line in to hands
     if ( i > 0 ) {
       ans = realloc(ans, (i+1)*sizeof(deck_t*));

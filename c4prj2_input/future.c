@@ -89,10 +89,10 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   
   //===CASE2: FILL LARGER INDEX===
   if ( (index >= fc->n_decks) ) {
-    //deck_t * empty = empty_deck();
+    deck_t * empty = empty_deck();
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
-      //fc->decks[0] = *empty;
+      fc->decks[0] = *empty;
       fc->n_decks = 1;
     }
     if ( index > 0 ) {
@@ -101,7 +101,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     }
     //fill in fc with empty decks except for index
     for ( int i = fc->n_decks; i < index; i++) {
-      //fc->decks[i] = *empty;
+      fc->decks[i] = *empty;
     }
 
     //fill in fc at index with input ptr
@@ -127,7 +127,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   //  so index 0 of the deck corresponds to ?0 in future cards
   //point the pointers in fc to the cards in deck??
   //print error message??
-  /*
+  
   if( deck->n_cards < fc->n_decks){
     printf("ERROR: not enough cards in deck to fill future cards\n");
     exit(EXIT_FAILURE);
@@ -142,5 +142,5 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
       fc->decks[i].cards[j]->suit = deck->cards[i]->suit;
       deck->cards[i] = fc->decks[i].cards[j];
     }
-    }*/
+  }
 }

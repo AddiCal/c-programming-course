@@ -35,7 +35,7 @@ int main( int argc, char ** argv){
   //==deck of cards used to add empty cards
   int len = 10;
   deck_t * ans = malloc(sizeof(deck_t));
-  ans->cards = malloc(52*sizeof(card_t*));
+  ans->cards = malloc(156*sizeof(card_t*));
   //==secondary deck of cards used to fill fc
   deck_t * test2 = malloc(sizeof(deck_t));
   test2->cards = malloc(len*sizeof(card_t*));
@@ -54,14 +54,14 @@ int main( int argc, char ** argv){
     //ans->cards[i] = cards[(i+3)*(4)];
     test2->cards[i] = cards[(i)*4];
   }
-  for ( int i = 0; i < 52; i++){
-    ans->cards[i] = cards[i];
+  for ( int i = 0; i < 156; i++){
+    ans->cards[i] = cards[i%52];
   }
-  ans->n_cards = 52;
+  ans->n_cards = 156;
   test2->n_cards = len;
 
-  print_deck(ans);
-  print_deck(test2);
+  //print_deck(ans);
+  //print_deck(test2);
 
   //==build fc deck (hold the pointers to each future card in the hands according to their fc index)
   future_cards_t *fc = malloc(sizeof(future_cards_t));
@@ -119,7 +119,7 @@ int main( int argc, char ** argv){
   //===FREES
   
   //--might need to change this if ans changes or becomes an array of arrays
-  for ( int i = 0; i < 52; i++){
+  for ( int i = 0; i < 156; i++){
     if ( deck_contains(ans, *cards[i]) == 0 ){
       free(cards[i]);
     }
