@@ -117,6 +117,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     line = NULL;
     i++;
   }
+  //==free all the decks once i've use them!!==
   *n_hands = i;
   free(line);
 

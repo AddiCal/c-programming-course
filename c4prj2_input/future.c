@@ -62,11 +62,14 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       deck_t * newDeck = malloc(sizeof(deck_t));
       newDeck->cards = malloc(sizeof(card_t*));
 
-      card_t ** newCards = malloc(sizeof(card_t*));
-      newCards[0] = malloc(sizeof(card_t));
-      newCards[0] = ptr;
+      //card_t ** newCards = malloc(sizeof(card_t*));
+      //newCards[0] = malloc(sizeof(card_t));
+      //newCards[0] = ptr;
 
-      newDeck->cards[0] = newCards[0];
+      card_t * newCard = malloc(sizeof(card_t));
+      newCard = ptr;
+
+      newDeck->cards[0] = &newCard[0];
       newDeck->n_cards = 1;
 
       fc->decks[index] = newDeck[0];
@@ -76,13 +79,15 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     else {
       //make cards array larger and add card
       //printf("index: %zu, n_decks: %zu, n_cards: %zu\n", index, fc->n_decks, fc->decks[index].n_cards);
-      card_t ** newCards = malloc(sizeof(card_t*));
-      newCards[0] = malloc(sizeof(card_t));
-      newCards[0] = ptr;
+      //card_t ** newCards = malloc(sizeof(card_t*));
+      //newCards[0] = malloc(sizeof(card_t));
+      //newCards[0] = ptr;
+      card_t * newCard = malloc(sizeof(card_t));
+      newCard = ptr;
       if ( fc->decks[index].n_cards > 0 ){
 	fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
 	}
-      fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
+      fc->decks[index].cards[fc->decks[index].n_cards] = &newCard[0];
       fc->decks[index].n_cards++;
     }    
   }
@@ -108,15 +113,20 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     deck_t * newDeck = malloc(sizeof(deck_t));
     newDeck->cards = malloc(sizeof(card_t*));
 
-    card_t ** newCards = malloc(sizeof(card_t*));
-    newCards[0] = malloc(sizeof(card_t));
-    newCards[0] = ptr;
+    //card_t ** newCards = malloc(sizeof(card_t*));
+    //newCards[0] = malloc(sizeof(card_t));
+    //newCards[0] = ptr;
 
-    newDeck->cards[0] = newCards[0];
+    card_t * newCard = malloc(sizeof(card_t));
+    newCard = ptr;
+
+    newDeck->cards[0] = &newCard[0];
     newDeck->n_cards = 1;
 
     fc->decks[index] = *newDeck;
     fc->n_decks = index+1;
+    
+    //free_deck(empty);
   }
   //printf("finished add_future_card fxn\n");
   //printFC(fc);
