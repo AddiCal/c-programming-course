@@ -107,14 +107,16 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   //printf("hands from input file:\n");
   while ( getline(&line, &size, f) >= 0){
     //parse line in to hands
-    if ( i > 0 ) {
-      ans = realloc(ans, (i+1)*sizeof(deck_t*));
-    }
     if ( strcmp(line, "\n") == 0 ){
       continue;
     }
+    
+    if ( i > 0 ) {
+      ans = realloc(ans, (i+1)*sizeof(deck_t*));
+    }
+    
     ans[i] = hand_from_string(line, fc);
-    line = NULL;
+    //line = NULL;
     i++;
   }
   //==free all the decks once i've use them!!==

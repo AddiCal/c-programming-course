@@ -23,6 +23,9 @@ void print_deck(deck_t * deck){
 void print_fc(future_cards_t * fc){
   printf("fc->n_decks: %zu\n", fc->n_decks); 
   for (int i = 0; i < fc->n_decks; i++){
+    if ( fc->decks[i].cards[0]->suit == NUM_SUITS ) {
+      continue;
+    }
     printf("index: %d", i);
     print_deck(&(fc->decks[i]));
   }

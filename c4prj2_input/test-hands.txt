@@ -1,7 +1,7 @@
-Jh ?1000 Qd 2c ?7
-2c 3d ?7 7s Qc
+Jh ?1000 Qd 2c ?1000
+2c 3d ?994 7s Qc
 ?8 4d Ah 8s Jc
-Kc 3h 5d ?2 7d
+Kc 3h 5d ?1001 7d
 Jd 3s Ac 7c ?7
 Ks Qs ?0 4h 8h
 
