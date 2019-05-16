@@ -17,9 +17,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
   ans->cards = malloc(sizeof(card_t*));
   ans->n_cards = 0;
 
-  //card_t ** cards = malloc(sizeof(card_t*));
-  //int lenCards = 0;
-  
+  //set up cards array
+  card_t ** cards = malloc(sizeof(card_t*));
+    
   //copy const string to something we can play with
   char temp[strlen(str)+1];
   strcpy(temp, str);
@@ -35,10 +35,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     //97 is DEC for ascii letter 'a' (ie. skip spaces and lower case letters and the number that comes after a '?')
     if ( (*ptr == ' ') || (*ptr > 96) ){ // || (lastCard[0] == '?' ) ){
       ptr++;
-      //lastPtr = *ptr;
       continue;
     }
     
+    //get new card if i > 0
     if ( i > 0 ){
       strCard = strtok(NULL, " ");
     }
@@ -49,8 +49,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
       char * rest = strCard;
       char * temp = strtok_r(rest, "?", &rest);
       int index = atoi(temp);
+      //add empty card and increment n_cards
       card_t * spot = add_empty_card(ans);
       add_future_card(fc, index, spot);
+
       int len = strlen(temp);
       int count = 0;
       for ( int i = 0; i < len; i++ ){
@@ -67,11 +69,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
     else {
       if ( i > 0 ){
 	ans->cards = realloc(ans->cards, (i+1)*sizeof(card_t*));
+	cards = realloc(cards, (i+1)*sizeof(card_t*));
       }
-      card_t * new = malloc(sizeof(card_t));
-      new[0] = card_from_letters(strCard[0], strCard[1]);
+      cards[i] = malloc(sizeof(card_t));
+      *cards[i] = card_from_letters(strCard[0], strCard[1]);
 
-      ans->cards[i] = &new[0];
+      ans->cards[i] = cards[i];
       ans->n_cards++;
     }
     i++;
@@ -114,6 +117,9 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     if ( i > 0 ) {
       ans = realloc(ans, (i+1)*sizeof(deck_t*));
     }
+
+    //is this step necessary?
+    ans[i] = malloc(sizeof(deck_t*));
     
     ans[i] = hand_from_string(line, fc);
     line = NULL;
