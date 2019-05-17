@@ -142,7 +142,6 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   int k = 0;
   for (int i = 0; i < fc->n_decks; i++){
     if (fc->decks[i].n_cards == 0){
-      free_deck(&(fc->decks[i]));
       continue;
     }
     for (int j = 0; j < fc->decks[i].n_cards; j++){
