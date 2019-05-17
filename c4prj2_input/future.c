@@ -99,6 +99,13 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //===CASE1: FILL LARGER INDEX===
   else if ( (index >= fc->n_decks) ) {
     //deck_t * empty = empty_deck();
+    card_t ** newCards = malloc(sizeof(card_t*));
+    newCards[0] = malloc(sizeof(card_t));
+    card_t emptycard;
+    emptycard.value = 0;
+    emptycard.suit = NUM_SUITS;
+    *newCards[0] = emptycard;
+    
 
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
@@ -128,14 +135,14 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     deck_t * newDeck = malloc(sizeof(deck_t));
     newDeck->cards = malloc(sizeof(card_t*));
     
-    card_t ** newCards = malloc(sizeof(card_t*));
-    newCards[0] = malloc(sizeof(card_t));
-    newCards[0] = ptr;
+    //card_t ** newCards = malloc(sizeof(card_t*));
+    newCards[1] = malloc(sizeof(card_t));
+    newCards[1] = ptr;
     
     //card_t * newCard = malloc(sizeof(card_t));
     //newCard = ptr;
 
-    newDeck->cards[0] = newCards[0];
+    newDeck->cards[0] = newCards[1];
     newDeck->n_cards = 1;
 
     //=====\/this is where my invalid write comes from=====
