@@ -92,12 +92,12 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     }  
   }
   //===CASE1: FILL LARGER INDEX===
-  /*else if ( (index >= fc->n_decks) ) {
-    deck_t * empty = empty_deck();
+  else if ( (index >= fc->n_decks) ) {
+    //deck_t * empty = empty_deck();
 
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
-      fc->decks[0] = *empty;
+      //fc->decks[0] = *empty;
       fc->n_decks = 1;
     }
       
@@ -107,7 +107,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
       //fill in fc with empty decks except for index
       for ( int i = fc->n_decks; i < index; i++) {
-	fc->decks[i] = *empty;
+	//fc->decks[i] = *empty;
       }
     }
       
@@ -127,7 +127,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
     fc->decks[index] = *newDeck;
     fc->n_decks = index+1;  
-    } */
+  } 
 }
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
