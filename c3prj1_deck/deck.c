@@ -73,11 +73,13 @@ void add_card_to( deck_t * deck, card_t c){
   //add a particular card to a given deck (realloc)
   //deck_t has card_t **cards, size_t n_cards
   //card_t has uint value, suit_t suit
-  card_t *card = malloc(sizeof(card_t));
-  card[0] = c;
+  card_t ** cards = malloc(sizeof(card_t*));
+  cards[0] = malloc(sizeof(card_t));
+  *cards[0] = c;
+
   int newLen = deck->n_cards + 1;
   deck->cards = realloc(deck->cards, newLen*sizeof(card_t *));
-  deck->cards[newLen-1] = &card[0];
+  deck->cards[newLen-1] = cards[0];
   //printf("added %d: value: %d, suit: %d\n", newLen-1, deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
   deck->n_cards++;
 }
