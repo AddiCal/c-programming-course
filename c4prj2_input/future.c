@@ -4,24 +4,6 @@
 #include "deck.h"
 #include "future.h"
 
-deck_t * empty_deck(){
-  //===USE ADD EMTPTY CARD TO MAKE DECK=====
-  deck_t * empty = malloc(sizeof(deck_t));
-  empty->cards = malloc(sizeof(card_t*));
-  
-  card_t **cards = malloc(sizeof(card_t*));
-  cards[0] = malloc(sizeof(card_t));
-  cards[0]->value = 0;
-  cards[0]->suit = NUM_SUITS;
-  //card_t emptycard;
-  //emptycard.value = 0;
-  //emptycard.suit = NUM_SUITS;
-  //cards[0] = &emptycard;
-
-  empty->cards[0] = cards[0];
-  empty->n_cards = 0;
-  return empty;
-}
 
 void printDECK(deck_t * deck){
   printf("\n");
@@ -70,9 +52,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       newCards[0] = malloc(sizeof(card_t));
       newCards[0] = ptr;
 
-      //card_t * newCard = malloc(sizeof(card_t));
-      //newCard = ptr;
-
       newDeck->cards[0] = newCards[0];
       newDeck->n_cards = 1;
 
@@ -87,11 +66,11 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       card_t ** newCards = malloc(sizeof(card_t*));
       newCards[0] = malloc(sizeof(card_t));
       newCards[0] = ptr;
-      //card_t * newCard = malloc(sizeof(card_t));
-      //newCard = ptr;
+
       if ( fc->decks[index].n_cards > 0 ){
 	fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)*sizeof(card_t*));
       }
+
       fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
       fc->decks[index].n_cards++;
     }  
@@ -105,6 +84,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     card_t emptycard;
     emptycard.value = 0;
     emptycard.suit = NUM_SUITS;
+
     *newCards[0] = emptycard;
 
     
@@ -117,8 +97,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
       fc->decks = malloc((1)*sizeof(deck_t));
-      //fc->decks[0].cards = malloc(sizeof(card_t*));
-      //fc->decks[0].cards[0] = newCards[0];
       fc->decks[0] = empty[0];
       fc->n_decks = 0;
     }
@@ -126,8 +104,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     if ( index > 0 ) {
       //reallocated fc decks array to be index+1 elements larger
       fc->decks = realloc(fc->decks, (index+1)*sizeof(deck_t));
-      //fc->decks[index].cards = malloc(sizeof(card_t*));
-
+      
       //fill in fc with empty decks except for index
       for ( int i = fc->n_decks; i < index; i++) {
 	fc->decks[i] = empty[0];
@@ -138,7 +115,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     deck_t * newDeck = malloc(sizeof(deck_t));
     newDeck->cards = malloc(sizeof(card_t*));
     
-    //card_t ** newCards = malloc(sizeof(card_t*));
     newCards = realloc(newCards, 2*sizeof(card_t*));
     newCards[1] = malloc(sizeof(card_t));
     newCards[1] = ptr;
@@ -149,7 +125,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
     //=====\/this is where my invalid write comes from=====
     fc->decks[index] = newDeck[0];
-    //fc->decks[index].cards[0] = newCards[1];
     fc->n_decks = index+1;
   } 
 }
@@ -177,4 +152,21 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
     k++;
   }
+  //make_deck_exclude for all the empty decks in fc
+  //replace fc->decks with only the empty ones so when they're free'd there's no overlap??
+  deck_t * empties = malloc(sizeof(deck_t));
+  empties->cards = malloc(sizeof(card_t*));
+  int len = 0;
+
+  for (int i = 0; i < fc->n_decks; i++){
+    if ( fc->decks[i].n_cards == 0 ){
+      if ( i > 0 ) {
+	empties = realloc(empties, (i+1)*sizeof(deck_t));
+      }
+      empties[i] = fc->decks[i];
+      len++;
+    }
+  }
+  fc->decks = NULL;
+  fc->decks = empties;
 }
