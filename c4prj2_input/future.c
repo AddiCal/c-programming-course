@@ -115,7 +115,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 	//fc->decks[i] = *empty;
       }
     }
-    /*  
+      
     //fill in fc at index with input ptr
     deck_t * newDeck = malloc(sizeof(deck_t));
     newDeck->cards = malloc(sizeof(card_t*));
@@ -131,7 +131,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     newDeck->n_cards = 1;
 
     fc->decks[index] = *newDeck;
-    fc->n_decks = index+1;  */
+    fc->n_decks = index+1; 
   } 
 }
 
