@@ -123,9 +123,6 @@ int main( int argc, char ** argv){
   //===FREES
   
   //--might need to change this if ans changes or becomes an array of arrays
-  for (int i = 0; i < fc->n_decks; i++){
-    free_deck(fc->decks);
-  }
   
   for ( int i = 0; i < 52; i++){
     if ( deck_contains(ans, *cards[i]) == 0 ){
