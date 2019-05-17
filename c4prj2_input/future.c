@@ -112,8 +112,9 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       //fc->decks[0] = *empty;
       fc->decks = malloc((1)*sizeof(deck_t));
       fc->decks[0].cards = malloc(sizeof(card_t*));
-      fc->decks[0].cards[0]->value = 0;
-      fc->decks[0].cards[0]->suit = NUM_SUITS;
+      fc->decks[0].cards[0] = newCards[0];
+      //fc->decks[0].cards[0]->value = 0;
+      //fc->decks[0].cards[0]->suit = NUM_SUITS;
       fc->n_decks = 0;
     }
       
@@ -125,8 +126,9 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       //fill in fc with empty decks except for index
       for ( int i = fc->n_decks; i < index; i++) {
 	fc->decks[i].cards = malloc(sizeof(card_t*));
-	fc->decks[i].cards[0]->value = 0;
-	fc->decks[i].cards[0]->suit = NUM_SUITS;
+	fc->decks[i].cards[0] = newCards[0];
+	//fc->decks[i].cards[0]->value = 0;
+	//fc->decks[i].cards[0]->suit = NUM_SUITS;
 	//fc->decks[i] = *empty;
       }
     }
