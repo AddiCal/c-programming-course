@@ -98,7 +98,6 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   }
   //===CASE1: FILL LARGER INDEX===
   else if ( (index >= fc->n_decks) ) {
-    //deck_t * empty = empty_deck();
     card_t ** newCards = malloc(sizeof(card_t*));
     newCards[0] = malloc(sizeof(card_t));
     card_t emptycard;
@@ -109,14 +108,16 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
-      //fc->decks[0] = *empty;
       fc->decks = malloc((1)*sizeof(deck_t));
       fc->decks[0].cards = malloc(sizeof(card_t*));
       fc->decks[0].cards[0] = newCards[0];
-      //fc->decks[0].cards[0]->value = 0;
-      //fc->decks[0].cards[0]->suit = NUM_SUITS;
       fc->n_decks = 0;
     }
+
+    deck_t * empty = malloc(sizeof(deck_t));
+    empty->cards = malloc(sizeof(card_t*));
+    empty->cards[0] = newCards[0];
+    empty->n_cards = 0;
       
     if ( index > 0 ) {
       //reallocated fc decks array to be index+1 elements larger
@@ -125,11 +126,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
       //fill in fc with empty decks except for index
       for ( int i = fc->n_decks; i < index; i++) {
-	fc->decks[i].cards = malloc(sizeof(card_t*));
-	fc->decks[i].cards[0] = newCards[0];
-	//fc->decks[i].cards[0]->value = 0;
-	//fc->decks[i].cards[0]->suit = NUM_SUITS;
-	//fc->decks[i] = *empty;
+	fc->decks[i] = empty[0];
       }
     }
       
@@ -138,17 +135,17 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     newDeck->cards = malloc(sizeof(card_t*));
     
     //card_t ** newCards = malloc(sizeof(card_t*));
+    newCards = realloc(newCards, 2*sizeof(card_t*));
     newCards[1] = malloc(sizeof(card_t));
     newCards[1] = ptr;
     
-    //card_t * newCard = malloc(sizeof(card_t));
-    //newCard = ptr;
-
+    
     newDeck->cards[0] = newCards[1];
     newDeck->n_cards = 1;
 
     //=====\/this is where my invalid write comes from=====
-    fc->decks[index] = *newDeck;
+    fc->decks[index] = newDeck[0];
+    //fc->decks[index].cards[0] = newCards[1];
     fc->n_decks = index+1;
   } 
 }
