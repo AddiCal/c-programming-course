@@ -1,4 +1,4 @@
-Grading at Fri May 17 16:59:56 UTC 2019
+Grading at Fri May 17 17:09:27 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,144 +7,102 @@ Linking input.o, future.o deck.o, cards.o, and our tester
 Testing with input file with 
  o 1 hand
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o No unknown/future cards
-Your file matched the expected output
-Test case passed
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
 Valgrind reported errors:
-==680== Memcheck, a memory error detector
-==680== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==680== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==680== Command: ./tester h.txt d.txt
-==680== Parent PID: 679
-==680== 
-==680== Conditional jump or move depends on uninitialised value(s)
-==680==    at 0x401653: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680== 
-==680== Invalid read of size 8
-==680==    at 0x40164C: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680==  Address 0x520b3d8 is 8 bytes after a block of size 16 alloc'd
-==680==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==680==    by 0x40177F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680== 
-==680== Invalid read of size 8
-==680==    at 0x401747: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680==  Address 0x520b3e8 is 24 bytes after a block of size 16 in arena "client"
-==680== 
-==680== Invalid read of size 8
-==680==    at 0x401679: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680==  Address 0x520b3e0 is 16 bytes after a block of size 16 alloc'd
-==680==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==680==    by 0x40177F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680== 
-==680== Invalid read of size 8
-==680==    at 0x401689: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==680== 
-==680== 
-==680== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==680==  Access not within mapped region at address 0x0
-==680==    at 0x401689: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==680==    by 0x402804: main (test-input.c:81)
-==680==  If you believe this happened as a result of a stack
-==680==  overflow in your program's main thread (unlikely but
-==680==  possible), you can try to increase the size of the
-==680==  main thread stack using the --main-stacksize= flag.
-==680==  The main thread stack size used in this run was 8388608.
-==680== 
-==680== HEAP SUMMARY:
-==680==     in use at exit: 2,008 bytes in 105 blocks
-==680==   total heap usage: 181 allocs, 76 frees, 17,208 bytes allocated
-==680== 
-==680== LEAK SUMMARY:
-==680==    definitely lost: 1,024 bytes in 33 blocks
-==680==    indirectly lost: 96 bytes in 12 blocks
-==680==      possibly lost: 0 bytes in 0 blocks
-==680==    still reachable: 888 bytes in 60 blocks
-==680==         suppressed: 0 bytes in 0 blocks
-==680== Rerun with --leak-check=full to see details of leaked memory
-==680== 
-==680== For counts of detected and suppressed errors, rerun with: -v
-==680== Use --track-origins=yes to see where uninitialised values come from
-==680== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==987== Memcheck, a memory error detector
+==987== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==987== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==987== Command: ./tester h.txt d.txt
+==987== Parent PID: 986
+==987== 
+==987== Invalid free() / delete / delete[] / realloc()
+==987==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==987==    by 0x402042: free_deck (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x402A13: main (test-input.c:102)
+==987==  Address 0x5205b00 is 0 bytes inside a block of size 8 free'd
+==987==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==987==    by 0x402042: free_deck (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x4029D0: main (test-input.c:100)
+==987==  Block was alloc'd at
+==987==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==987==    by 0x401B8D: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x401C3C: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==987==    by 0x4027CB: main (test-input.c:69)
+==987== 
+==987== 
+==987== HEAP SUMMARY:
+==987==     in use at exit: 1,152 bytes in 52 blocks
+==987==   total heap usage: 189 allocs, 141 frees, 17,280 bytes allocated
+==987== 
+==987== LEAK SUMMARY:
+==987==    definitely lost: 1,024 bytes in 36 blocks
+==987==    indirectly lost: 128 bytes in 16 blocks
+==987==      possibly lost: 0 bytes in 0 blocks
+==987==    still reachable: 0 bytes in 0 blocks
+==987==         suppressed: 0 bytes in 0 blocks
+==987== Rerun with --leak-check=full to see details of leaked memory
+==987== 
+==987== For counts of detected and suppressed errors, rerun with: -v
+==987== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
 Valgrind reported errors:
-==686== Memcheck, a memory error detector
-==686== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==686== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==686== Command: ./tester i1 i2
-==686== Parent PID: 685
-==686== 
-==686== Conditional jump or move depends on uninitialised value(s)
-==686==    at 0x401653: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686== 
-==686== Invalid read of size 8
-==686==    at 0x40164C: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686==  Address 0x5211818 is 8 bytes after a block of size 16 alloc'd
-==686==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==686==    by 0x40177F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686== 
-==686== Invalid read of size 8
-==686==    at 0x401747: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686==  Address 0x5211828 is 24 bytes after a block of size 16 in arena "client"
-==686== 
-==686== Invalid read of size 8
-==686==    at 0x401679: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686==  Address 0x5211820 is 16 bytes after a block of size 16 alloc'd
-==686==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==686==    by 0x40177F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686== 
-==686== Invalid read of size 8
-==686==    at 0x401689: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==686== 
-==686== 
-==686== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==686==  Access not within mapped region at address 0x0
-==686==    at 0x401689: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==686==    by 0x402804: main (test-input.c:81)
-==686==  If you believe this happened as a result of a stack
-==686==  overflow in your program's main thread (unlikely but
-==686==  possible), you can try to increase the size of the
-==686==  main thread stack using the --main-stacksize= flag.
-==686==  The main thread stack size used in this run was 8388608.
-==686== 
-==686== HEAP SUMMARY:
-==686==     in use at exit: 4,624 bytes in 279 blocks
-==686==   total heap usage: 449 allocs, 170 frees, 24,192 bytes allocated
-==686== 
-==686== LEAK SUMMARY:
-==686==    definitely lost: 2,160 bytes in 113 blocks
-==686==    indirectly lost: 424 bytes in 36 blocks
-==686==      possibly lost: 0 bytes in 0 blocks
-==686==    still reachable: 2,040 bytes in 130 blocks
-==686==         suppressed: 0 bytes in 0 blocks
-==686== Rerun with --leak-check=full to see details of leaked memory
-==686== 
-==686== For counts of detected and suppressed errors, rerun with: -v
-==686== Use --track-origins=yes to see where uninitialised values come from
-==686== ERROR SUMMARY: 6 errors from 5 contexts (suppressed: 0 from 0)
+==993== Memcheck, a memory error detector
+==993== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==993== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==993== Command: ./tester i1 i2
+==993== Parent PID: 992
+==993== 
+==993== Invalid free() / delete / delete[] / realloc()
+==993==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==993==    by 0x402042: free_deck (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x402A13: main (test-input.c:102)
+==993==  Address 0x520b410 is 0 bytes inside a block of size 8 free'd
+==993==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==993==    by 0x402042: free_deck (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x4029D0: main (test-input.c:100)
+==993==  Block was alloc'd at
+==993==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==993==    by 0x401B8D: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x401C3C: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==993==    by 0x4027CB: main (test-input.c:69)
+==993== 
+==993== 
+==993== HEAP SUMMARY:
+==993==     in use at exit: 2,536 bytes in 160 blocks
+==993==   total heap usage: 462 allocs, 314 frees, 24,312 bytes allocated
+==993== 
+==993== LEAK SUMMARY:
+==993==    definitely lost: 2,280 bytes in 128 blocks
+==993==    indirectly lost: 256 bytes in 32 blocks
+==993==      possibly lost: 0 bytes in 0 blocks
+==993==    still reachable: 0 bytes in 0 blocks
+==993==         suppressed: 0 bytes in 0 blocks
+==993== Rerun with --leak-check=full to see details of leaked memory
+==993== 
+==993== For counts of detected and suppressed errors, rerun with: -v
+==993== ERROR SUMMARY: 12 errors from 1 contexts (suppressed: 0 from 0)
 
-Overall Grade: C
+Overall Grade: F
