@@ -77,9 +77,9 @@ int main( int argc, char ** argv){
   empty[0]->value = 0;
   empty[0]->suit = NUM_SUITS;
 
-  fc->decks->cards[0] = empty[0];
-  fc->decks->n_cards = 0;
-  fc->n_decks = 0;
+  //fc->decks->cards[0] = empty[0];
+  //fc->decks->n_cards = 0;
+  //fc->n_decks = 0;
   
   //===TEST3===
   printf("===TEST3===\n");

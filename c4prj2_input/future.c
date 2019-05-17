@@ -52,7 +52,12 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
   //  (a ptr already added with add_empty_card)
   //if the array does not exist up till that index make the array big enough and fill it with NULLdecks
   //fc struct: deck_t * decks, size_t n_decks
-
+  if ( !(fc->n_decks) | (fc->n_decks==0)){
+    fc->n_decks = 0;
+  }
+  if (!(fc->decks)){
+    //add empty deck
+  }
   if ( (index < fc->n_decks) ){
     //===CASE0: FILL EMPTY FC===
     //if deck is empty you also have to create a new deck and replace the old one
@@ -98,7 +103,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
       //fc->decks[0] = *empty;
-      fc->n_decks = 1;
+      fc->n_decks = 0;
     }
       
     if ( index > 0 ) {
