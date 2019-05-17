@@ -106,7 +106,7 @@ int main( int argc, char ** argv){
   future_cards_from_deck(ans, fc);
 
   printf("\n===fc cards filled in\n");
-  print_fc(fc);
+  //print_fc(fc);
 
   printf("\n===ans deck\n");
   print_deck(ans);

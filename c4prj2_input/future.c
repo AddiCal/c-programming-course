@@ -152,6 +152,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
     k++;
   }
+  printFC(fc);
+  printf("\n");
   //make_deck_exclude for all the empty decks in fc
   //replace fc->decks with only the empty ones so when they're free'd there's no overlap??
   deck_t * empties = malloc(sizeof(deck_t));
@@ -167,6 +169,12 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
       len++;
     }
   }
-  fc->decks = NULL;
-  fc->decks = empties;
+  printf("length of empties: %d\n", len);
+  fc->decks = realloc(fc->decks, len*sizeof(deck_t));
+  for (int i = 0; i < len; i++){
+    fc->decks[i] = empties[i];
+  }
+  fc->n_decks = len;
+  printFC(fc);
+  //fc->decks = empties;
 }
