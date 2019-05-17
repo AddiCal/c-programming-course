@@ -187,5 +187,7 @@ void free_deck(deck_t * deck){
     deck->cards[i] = NULL;
   }
   free(deck->cards);
+  deck->cards = NULL;
   free(deck);
+  deck = NULL;
 }
