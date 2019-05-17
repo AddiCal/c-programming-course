@@ -129,9 +129,10 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
 
     newDeck->cards[0] = newCards[0];
     newDeck->n_cards = 1;
-    
-    fc->decks[index] = *newDeck;
-    //fc->n_decks = index+1;
+
+    //=====\/this is where my invalid write comes from=====
+    fc->decks[index].cards[0] = newCards[0];
+    fc->n_decks = index+1;
   } 
 }
 
