@@ -103,6 +103,8 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     //fill in 0th element if fc is empty
     if ( fc->n_decks == 0 ){
       //fc->decks[0] = *empty;
+      fc->decks = malloc((1)*sizeof(deck_t));
+      fc->decks[0].cards = malloc(sizeof(card_t*));
       fc->n_decks = 0;
     }
       
@@ -133,7 +135,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     newDeck->n_cards = 1;
 
     //=====\/this is where my invalid write comes from=====
-    fc->decks[index].cards[0] = newCards[0];
+    fc->decks[index] = *newDeck;
     fc->n_decks = index+1;
   } 
 }
