@@ -123,13 +123,13 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     card_t ** newCards = malloc(sizeof(card_t*));
     newCards[0] = malloc(sizeof(card_t));
     newCards[0] = ptr;
-    /*
+    
     //card_t * newCard = malloc(sizeof(card_t));
     //newCard = ptr;
 
     newDeck->cards[0] = newCards[0];
     newDeck->n_cards = 1;
-
+    /*
     fc->decks[index] = *newDeck;
     fc->n_decks = index+1; */
   } 
