@@ -76,7 +76,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
     }
     //===CASE2: FILL EXISTING INDEX===
     //if existing deck is not empty, update it the way you'd think
-    /*else {
+    else {
       //make cards array larger and add card
       //printf("index: %zu, n_decks: %zu, n_cards: %zu\n", index, fc->n_decks, fc->decks[index].n_cards);
       card_t ** newCards = malloc(sizeof(card_t*));
@@ -89,7 +89,7 @@ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
       }
       fc->decks[index].cards[fc->decks[index].n_cards] = newCards[0];
       fc->decks[index].n_cards++;
-      }*/  
+    }  
   }
   //===CASE1: FILL LARGER INDEX===
   /*else if ( (index >= fc->n_decks) ) {
