@@ -76,10 +76,10 @@ void add_card_to( deck_t * deck, card_t c){
   card_t ** cards = malloc(sizeof(card_t*));
   cards[0] = malloc(sizeof(card_t));
   *cards[0] = c;
-  if ( deck->n_cards > 0) {
-    deck->cards = realloc(deck->cards, (deck->n_cards+1)*sizeof(card_t *));
-  }
-  deck->cards[deck->n_cards] = cards[0];
+
+  int newLen = deck->n_cards + 1;
+  deck->cards = realloc(deck->cards, newLen*sizeof(card_t *));
+  deck->cards[newLen-1] = cards[0];
   //printf("added %d: value: %d, suit: %d\n", newLen-1, deck->cards[deck->n_cards]->value, deck->cards[deck->n_cards]->suit);
   deck->n_cards++;
 }

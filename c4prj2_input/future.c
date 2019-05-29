@@ -152,27 +152,30 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
     k++;
   }
-  //printFC(fc);
-  //printf("\n");
-  int count = 0;
-  //remove non-empty decks from fc OR make all decks empty
-  //loop through all decks in fc
-  for ( int i = 0; i < fc->n_decks; i++){
-    //if the deck isn't empty, remove that element by shifting the array elements back one (you'll have empty crap at the end
-    if ( fc->decks[i].cards[0]->suit != NUM_SUITS){
-      for (int k = i; k < (fc->n_decks - 1); k++){
-	fc->decks[i] = fc->decks[i+1];
+  printFC(fc);
+  printf("\n");
+  /*
+  //make_deck_exclude for all the empty decks in fc
+  //replace fc->decks with only the empty ones so when they're free'd there's no overlap??
+  deck_t * empties = malloc(sizeof(deck_t));
+  empties->cards = malloc(sizeof(card_t*));
+  int len = 0;
+
+  for (int i = 0; i < fc->n_decks; i++){
+    if ( fc->decks[i].n_cards == 0 ){
+      if ( i > 0 ) {
+	empties = realloc(empties, (i+1)*sizeof(deck_t));
       }
-      if (fc->decks[i].cards[0]->suit != NUM_SUITS){
-	i-=1;
-      }
-      fc->n_decks--;
-      count++;
+      empties[i] = fc->decks[i];
+      len++;
     }
-  }//end loop through decks in fc
-
-  if ( count > 0 ){
-    fc->decks = realloc(fc->decks, (fc->n_decks)*sizeof(deck_t));
   }
-
+  printf("length of empties: %d\n", len);
+  fc->decks = realloc(fc->decks, len*sizeof(deck_t));
+  for (int i = 0; i < len; i++){
+    fc->decks[i] = empties[i];
+  }
+  fc->n_decks = len;
+  printFC(fc);
+  //fc->decks = empties;*/
 }

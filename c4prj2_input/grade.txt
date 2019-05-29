@@ -1,4 +1,4 @@
-Grading at Wed May 29 16:10:56 UTC 2019
+Grading at Fri May 17 17:33:37 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -7,178 +7,98 @@ Linking input.o, future.o deck.o, cards.o, and our tester
 Testing with input file with 
  o 1 hand
  o No unknown/future cards
-Valgrind reported errors:
-==210== Memcheck, a memory error detector
-==210== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==210== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==210== Command: ./tester hands.txt draw.txt
-==210== Parent PID: 209
-==210== 
-==210== Invalid write of size 8
-==210==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==210==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==210==    by 0x4025A9: simple_read_input (test-input.c:32)
-==210==    by 0x402834: main (test-input.c:77)
-==210==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==210== 
-==210== 
-==210== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==210==  Access not within mapped region at address 0x0
-==210==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==210==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==210==    by 0x4025A9: simple_read_input (test-input.c:32)
-==210==    by 0x402834: main (test-input.c:77)
-==210==  If you believe this happened as a result of a stack
-==210==  overflow in your program's main thread (unlikely but
-==210==  possible), you can try to increase the size of the
-==210==  main thread stack using the --main-stacksize= flag.
-==210==  The main thread stack size used in this run was 8388608.
-==210== 
-==210== HEAP SUMMARY:
-==210==     in use at exit: 1,024 bytes in 18 blocks
-==210==   total heap usage: 34 allocs, 16 frees, 10,224 bytes allocated
-==210== 
-==210== LEAK SUMMARY:
-==210==    definitely lost: 184 bytes in 3 blocks
-==210==    indirectly lost: 0 bytes in 0 blocks
-==210==      possibly lost: 0 bytes in 0 blocks
-==210==    still reachable: 840 bytes in 15 blocks
-==210==         suppressed: 0 bytes in 0 blocks
-==210== Rerun with --leak-check=full to see details of leaked memory
-==210== 
-==210== For counts of detected and suppressed errors, rerun with: -v
-==210== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o No unknown/future cards
-Valgrind reported errors:
-==215== Memcheck, a memory error detector
-==215== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==215== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==215== Command: ./tester hands.txt draw.txt
-==215== Parent PID: 214
-==215== 
-==215== Invalid write of size 8
-==215==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==215==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==215==    by 0x4025A9: simple_read_input (test-input.c:32)
-==215==    by 0x402834: main (test-input.c:77)
-==215==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==215== 
-==215== 
-==215== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==215==  Access not within mapped region at address 0x0
-==215==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==215==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==215==    by 0x4025A9: simple_read_input (test-input.c:32)
-==215==    by 0x402834: main (test-input.c:77)
-==215==  If you believe this happened as a result of a stack
-==215==  overflow in your program's main thread (unlikely but
-==215==  possible), you can try to increase the size of the
-==215==  main thread stack using the --main-stacksize= flag.
-==215==  The main thread stack size used in this run was 8388608.
-==215== 
-==215== HEAP SUMMARY:
-==215==     in use at exit: 1,984 bytes in 54 blocks
-==215==   total heap usage: 109 allocs, 55 frees, 12,240 bytes allocated
-==215== 
-==215== LEAK SUMMARY:
-==215==    definitely lost: 736 bytes in 12 blocks
-==215==    indirectly lost: 0 bytes in 0 blocks
-==215==      possibly lost: 0 bytes in 0 blocks
-==215==    still reachable: 1,248 bytes in 42 blocks
-==215==         suppressed: 0 bytes in 0 blocks
-==215== Rerun with --leak-check=full to see details of leaked memory
-==215== 
-==215== For counts of detected and suppressed errors, rerun with: -v
-==215== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
 Valgrind reported errors:
-==221== Memcheck, a memory error detector
-==221== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==221== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==221== Command: ./tester h.txt d.txt
-==221== Parent PID: 220
-==221== 
-==221== Invalid write of size 8
-==221==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==221==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==221==    by 0x4025A9: simple_read_input (test-input.c:32)
-==221==    by 0x402834: main (test-input.c:77)
-==221==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==221== 
-==221== 
-==221== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==221==  Access not within mapped region at address 0x0
-==221==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==221==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==221==    by 0x4025A9: simple_read_input (test-input.c:32)
-==221==    by 0x402834: main (test-input.c:77)
-==221==  If you believe this happened as a result of a stack
-==221==  overflow in your program's main thread (unlikely but
-==221==  possible), you can try to increase the size of the
-==221==  main thread stack using the --main-stacksize= flag.
-==221==  The main thread stack size used in this run was 8388608.
-==221== 
-==221== HEAP SUMMARY:
-==221==     in use at exit: 2,368 bytes in 87 blocks
-==221==   total heap usage: 145 allocs, 58 frees, 12,560 bytes allocated
-==221== 
-==221== LEAK SUMMARY:
-==221==    definitely lost: 960 bytes in 32 blocks
-==221==    indirectly lost: 64 bytes in 8 blocks
-==221==      possibly lost: 0 bytes in 0 blocks
-==221==    still reachable: 1,344 bytes in 47 blocks
-==221==         suppressed: 0 bytes in 0 blocks
-==221== Rerun with --leak-check=full to see details of leaked memory
-==221== 
-==221== For counts of detected and suppressed errors, rerun with: -v
-==221== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1652== Memcheck, a memory error detector
+==1652== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1652== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1652== Command: ./tester h.txt d.txt
+==1652== Parent PID: 1651
+==1652== 
+==1652== Invalid free() / delete / delete[] / realloc()
+==1652==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1652==    by 0x401ED2: free_deck (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x4028D1: main (test-input.c:102)
+==1652==  Address 0x5205b00 is 0 bytes inside a block of size 8 free'd
+==1652==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1652==    by 0x401ED2: free_deck (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x40288E: main (test-input.c:100)
+==1652==  Block was alloc'd at
+==1652==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1652==    by 0x401A1D: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x401ACC: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==1652==    by 0x402689: main (test-input.c:69)
+==1652== 
+==1652== 
+==1652== HEAP SUMMARY:
+==1652==     in use at exit: 1,120 bytes in 52 blocks
+==1652==   total heap usage: 179 allocs, 143 frees, 17,184 bytes allocated
+==1652== 
+==1652== LEAK SUMMARY:
+==1652==    definitely lost: 1,056 bytes in 44 blocks
+==1652==    indirectly lost: 64 bytes in 8 blocks
+==1652==      possibly lost: 0 bytes in 0 blocks
+==1652==    still reachable: 0 bytes in 0 blocks
+==1652==         suppressed: 0 bytes in 0 blocks
+==1652== Rerun with --leak-check=full to see details of leaked memory
+==1652== 
+==1652== For counts of detected and suppressed errors, rerun with: -v
+==1652== ERROR SUMMARY: 16 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
 Valgrind reported errors:
-==227== Memcheck, a memory error detector
-==227== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==227== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==227== Command: ./tester i1 i2
-==227== Parent PID: 226
-==227== 
-==227== Invalid write of size 8
-==227==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==227==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==227==    by 0x4025A9: simple_read_input (test-input.c:32)
-==227==    by 0x402834: main (test-input.c:77)
-==227==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==227== 
-==227== 
-==227== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==227==  Access not within mapped region at address 0x0
-==227==    at 0x401BA9: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==227==    by 0x40253F: simple_hand_from_string (test-input.c:16)
-==227==    by 0x4025A9: simple_read_input (test-input.c:32)
-==227==    by 0x402834: main (test-input.c:77)
-==227==  If you believe this happened as a result of a stack
-==227==  overflow in your program's main thread (unlikely but
-==227==  possible), you can try to increase the size of the
-==227==  main thread stack using the --main-stacksize= flag.
-==227==  The main thread stack size used in this run was 8388608.
-==227== 
-==227== HEAP SUMMARY:
-==227==     in use at exit: 4,240 bytes in 226 blocks
-==227==   total heap usage: 320 allocs, 94 frees, 15,736 bytes allocated
-==227== 
-==227== LEAK SUMMARY:
-==227==    definitely lost: 2,104 bytes in 129 blocks
-==227==    indirectly lost: 192 bytes in 24 blocks
-==227==      possibly lost: 0 bytes in 0 blocks
-==227==    still reachable: 1,944 bytes in 73 blocks
-==227==         suppressed: 0 bytes in 0 blocks
-==227== Rerun with --leak-check=full to see details of leaked memory
-==227== 
-==227== For counts of detected and suppressed errors, rerun with: -v
-==227== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==1658== Memcheck, a memory error detector
+==1658== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1658== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1658== Command: ./tester i1 i2
+==1658== Parent PID: 1657
+==1658== 
+==1658== Invalid free() / delete / delete[] / realloc()
+==1658==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1658==    by 0x401ED2: free_deck (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x4028D1: main (test-input.c:102)
+==1658==  Address 0x520b410 is 0 bytes inside a block of size 8 free'd
+==1658==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1658==    by 0x401ED2: free_deck (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x40288E: main (test-input.c:100)
+==1658==  Block was alloc'd at
+==1658==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1658==    by 0x401A1D: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x401ACC: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==1658==    by 0x402689: main (test-input.c:69)
+==1658== 
+==1658== 
+==1658== HEAP SUMMARY:
+==1658==     in use at exit: 2,640 bytes in 196 blocks
+==1658==   total heap usage: 447 allocs, 323 frees, 24,168 bytes allocated
+==1658== 
+==1658== LEAK SUMMARY:
+==1658==    definitely lost: 2,448 bytes in 172 blocks
+==1658==    indirectly lost: 192 bytes in 24 blocks
+==1658==      possibly lost: 0 bytes in 0 blocks
+==1658==    still reachable: 0 bytes in 0 blocks
+==1658==         suppressed: 0 bytes in 0 blocks
+==1658== Rerun with --leak-check=full to see details of leaked memory
+==1658== 
+==1658== For counts of detected and suppressed errors, rerun with: -v
+==1658== ERROR SUMMARY: 72 errors from 1 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
