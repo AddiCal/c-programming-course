@@ -139,18 +139,18 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     printf("ERROR: not enough cards in deck to fill future cards\n");
     exit(EXIT_FAILURE);
   }
-  //int k = 0;
+  int k = 0;
   for (int i = 0; i < fc->n_decks; i++){
     if (fc->decks[i].n_cards == 0){
       continue;
     }
     for (int j = 0; j < fc->decks[i].n_cards; j++){
       //printf("deck: %d, card: %d\n", i, j);
-      fc->decks[i].cards[j]->value = deck->cards[i]->value;
-      fc->decks[i].cards[j]->suit = deck->cards[i]->suit;
+      fc->decks[i].cards[j]->value = deck->cards[k]->value;
+      fc->decks[i].cards[j]->suit = deck->cards[k]->suit;
       //fc->decks[i].cards[j] = deck->cards[k];
     }
-    //k++;
+    k++;
   }
   //===REMOVE BEFORE COMMITTING===
   //printFC(fc);
