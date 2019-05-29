@@ -149,6 +149,7 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
       fc->decks[i].cards[j]->value = deck->cards[k]->value;
       fc->decks[i].cards[j]->suit = deck->cards[k]->suit;
       //deck->cards[i] = fc->decks[i].cards[j];
+      fc->decks[i].cards[j] = deck->cards[k];
     }
     k++;
   }
