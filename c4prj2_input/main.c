@@ -37,7 +37,7 @@ int main( int argc, char ** argv){
   card_t ** cards = malloc(52*sizeof(card_t*));
   //==deck of cards used to add empty cards
   int len = 10;
-  int ans_size = 1010;
+  int ans_size = 10;
   deck_t * ans = malloc(sizeof(deck_t));
   ans->cards = malloc(ans_size*sizeof(card_t*));
   //==secondary deck of cards used to fill fc
@@ -69,17 +69,25 @@ int main( int argc, char ** argv){
 
   //==build fc deck (hold the pointers to each future card in the hands according to their fc index)
   future_cards_t *fc = malloc(sizeof(future_cards_t));
-  fc->decks = malloc(sizeof(deck_t));
-  fc->decks->cards = malloc(sizeof(card_t*));
+ fc->decks = malloc(sizeof(deck_t));
+  //fc->decks->cards = malloc(sizeof(card_t*));
 
   card_t ** empty = malloc(sizeof(card_t*));
   empty[0] = malloc(sizeof(card_t));
-  empty[0]->value = 0;
-  empty[0]->suit = NUM_SUITS;
 
-  //fc->decks->cards[0] = empty[0];
-  //fc->decks->n_cards = 0;
-  //fc->n_decks = 0;
+  card_t ecard;
+  ecard.value = 0;
+  ecard.suit = NUM_SUITS;
+
+  *empty[0] = ecard;
+  
+  deck_t * emptydeck = malloc(sizeof(deck_t));
+  emptydeck->cards = malloc(sizeof(card_t*));
+  emptydeck->cards[0] = empty[0];
+
+  fc->decks[0] = emptydeck[0];
+  fc->decks->n_cards = 0;
+  fc->n_decks = 0;
   
   //===TEST3===
   printf("===TEST3===\n");
@@ -113,7 +121,7 @@ int main( int argc, char ** argv){
 
   printf("\n===hands filled in with ans: \n");
   for (int i = 0; i < n_hands; i++){
-    print_deck(read[i]);
+      print_deck(read[i]);
   }
   
   if ( fclose(f) != 0 ){
@@ -124,12 +132,11 @@ int main( int argc, char ** argv){
   
   //--might need to change this if ans changes or becomes an array of arrays
   
-  for ( int i = 0; i < 52; i++){
-    if ( deck_contains(ans, *cards[i]) == 0 ){
-      free(cards[i]);
-    }
-  }
   free_deck(ans);
   free(cards);
+  for (int i = 0; i < fc->n_decks; i++) {
+    free_deck(&(fc->decks[i]));
+  }
+  //free_deck(ans);
   return EXIT_SUCCESS;
 }
