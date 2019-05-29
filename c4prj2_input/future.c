@@ -152,8 +152,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
     k++;
   }
-  printFC(fc);
-  printf("\n");
+  //printFC(fc);
+  //printf("\n");
   
   //remove all non-empty decks from FC so that the cards don't get double freed
   int count = 0;
