@@ -74,7 +74,7 @@ void add_card_to( deck_t * deck, card_t c){
   //deck_t has card_t **cards, size_t n_cards
   //card_t has uint value, suit_t suit
   card_t ** cards = malloc(sizeof(card_t*));
-  cards[0] = malloc(sizeof(card_t));
+  //cards[0] = malloc(sizeof(card_t));
   *cards[0] = c;
 
   int newLen = deck->n_cards + 1;
