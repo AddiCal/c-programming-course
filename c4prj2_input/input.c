@@ -45,6 +45,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc){
 
     //deal with future cards
     if ( strCard[0] == '?' ){
+      if ((strCard[1] < 48) || (strCard[1] > 57)){ //checks to make sure ? is followed by a digit
+	fprintf(stderr, "ERROR: invalid format for future card in input file\n");
+	exit(EXIT_FAILURE);
+      }
       //add empty card //fill in with future card with index 
       char * rest = strCard;
       char * temp = strtok_r(rest, "?", &rest);

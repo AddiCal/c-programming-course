@@ -36,8 +36,8 @@ int main( int argc, char ** argv){
   //==array of 52 cards
   card_t ** cards = malloc(52*sizeof(card_t*));
   //==deck of cards used to add empty cards
-  int len = 10;
-  int ans_size = 1010;
+  int len = 15;
+  int ans_size = 15;
   deck_t * ans = malloc(sizeof(deck_t));
   ans->cards = malloc(ans_size*sizeof(card_t*));
   //==secondary deck of cards used to fill fc
@@ -126,7 +126,7 @@ int main( int argc, char ** argv){
   
   for ( int i = 0; i < 52; i++){
     if ( deck_contains(ans, *cards[i]) == 0 ){
-      free(cards[i]);
+      //free(cards[i]);
     }
   }
   free_deck(ans);
