@@ -1,4 +1,4 @@
-Grading at Wed May 29 16:33:42 UTC 2019
+Grading at Wed May 29 16:36:35 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -22,83 +22,83 @@ Testing with input file with
  o Many hands
  o 1 unknown/future cards per hand
 Valgrind reported errors:
-==619== Memcheck, a memory error detector
-==619== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==619== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==619== Command: ./tester h.txt d.txt
-==619== Parent PID: 618
-==619== 
-==619== Invalid free() / delete / delete[] / realloc()
-==619==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==619==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x402A0C: main (test-input.c:102)
-==619==  Address 0x5205b50 is 0 bytes inside a block of size 8 free'd
-==619==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==619==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x4029C9: main (test-input.c:100)
-==619==  Block was alloc'd at
-==619==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==619==    by 0x401B4C: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x401C07: add_empty_card (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
-==619==    by 0x4027C4: main (test-input.c:69)
-==619== 
-==619== 
-==619== HEAP SUMMARY:
-==619==     in use at exit: 1,216 bytes in 64 blocks
-==619==   total heap usage: 199 allocs, 139 frees, 17,344 bytes allocated
-==619== 
-==619== LEAK SUMMARY:
-==619==    definitely lost: 1,088 bytes in 48 blocks
-==619==    indirectly lost: 128 bytes in 16 blocks
-==619==      possibly lost: 0 bytes in 0 blocks
-==619==    still reachable: 0 bytes in 0 blocks
-==619==         suppressed: 0 bytes in 0 blocks
-==619== Rerun with --leak-check=full to see details of leaked memory
-==619== 
-==619== For counts of detected and suppressed errors, rerun with: -v
-==619== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
+==825== Memcheck, a memory error detector
+==825== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==825== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==825== Command: ./tester h.txt d.txt
+==825== Parent PID: 824
+==825== 
+==825== Invalid free() / delete / delete[] / realloc()
+==825==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==825==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x4029DE: main (test-input.c:102)
+==825==  Address 0x5205b50 is 0 bytes inside a block of size 8 free'd
+==825==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==825==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x40299B: main (test-input.c:100)
+==825==  Block was alloc'd at
+==825==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==825==    by 0x401B4C: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x401C07: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==825==    by 0x402796: main (test-input.c:69)
+==825== 
+==825== 
+==825== HEAP SUMMARY:
+==825==     in use at exit: 1,216 bytes in 64 blocks
+==825==   total heap usage: 199 allocs, 139 frees, 17,344 bytes allocated
+==825== 
+==825== LEAK SUMMARY:
+==825==    definitely lost: 1,088 bytes in 48 blocks
+==825==    indirectly lost: 128 bytes in 16 blocks
+==825==      possibly lost: 0 bytes in 0 blocks
+==825==    still reachable: 0 bytes in 0 blocks
+==825==         suppressed: 0 bytes in 0 blocks
+==825== Rerun with --leak-check=full to see details of leaked memory
+==825== 
+==825== For counts of detected and suppressed errors, rerun with: -v
+==825== ERROR SUMMARY: 4 errors from 1 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
 Valgrind reported errors:
-==625== Memcheck, a memory error detector
-==625== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==625== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==625== Command: ./tester i1 i2
-==625== Parent PID: 624
-==625== 
-==625== Invalid free() / delete / delete[] / realloc()
-==625==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==625==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x402A0C: main (test-input.c:102)
-==625==  Address 0x520bd20 is 0 bytes inside a block of size 8 free'd
-==625==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==625==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x4029C9: main (test-input.c:100)
-==625==  Block was alloc'd at
-==625==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==625==    by 0x401B4C: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x401C07: add_empty_card (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
-==625==    by 0x4027C4: main (test-input.c:69)
-==625== 
-==625== 
-==625== HEAP SUMMARY:
-==625==     in use at exit: 3,200 bytes in 249 blocks
-==625==   total heap usage: 548 allocs, 311 frees, 24,976 bytes allocated
-==625== 
-==625== LEAK SUMMARY:
-==625==    definitely lost: 2,896 bytes in 211 blocks
-==625==    indirectly lost: 304 bytes in 38 blocks
-==625==      possibly lost: 0 bytes in 0 blocks
-==625==    still reachable: 0 bytes in 0 blocks
-==625==         suppressed: 0 bytes in 0 blocks
-==625== Rerun with --leak-check=full to see details of leaked memory
-==625== 
-==625== For counts of detected and suppressed errors, rerun with: -v
-==625== ERROR SUMMARY: 12 errors from 1 contexts (suppressed: 0 from 0)
+==831== Memcheck, a memory error detector
+==831== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==831== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==831== Command: ./tester i1 i2
+==831== Parent PID: 830
+==831== 
+==831== Invalid free() / delete / delete[] / realloc()
+==831==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==831==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x4029DE: main (test-input.c:102)
+==831==  Address 0x520bd20 is 0 bytes inside a block of size 8 free'd
+==831==    at 0x4C2EDEB: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==831==    by 0x40200D: free_deck (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x40299B: main (test-input.c:100)
+==831==  Block was alloc'd at
+==831==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==831==    by 0x401B4C: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x401C07: add_empty_card (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x400D86: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x401061: read_input (in /graderhome/work/c4prj2_input/tester)
+==831==    by 0x402796: main (test-input.c:69)
+==831== 
+==831== 
+==831== HEAP SUMMARY:
+==831==     in use at exit: 3,200 bytes in 249 blocks
+==831==   total heap usage: 548 allocs, 311 frees, 24,976 bytes allocated
+==831== 
+==831== LEAK SUMMARY:
+==831==    definitely lost: 2,896 bytes in 211 blocks
+==831==    indirectly lost: 304 bytes in 38 blocks
+==831==      possibly lost: 0 bytes in 0 blocks
+==831==    still reachable: 0 bytes in 0 blocks
+==831==         suppressed: 0 bytes in 0 blocks
+==831== Rerun with --leak-check=full to see details of leaked memory
+==831== 
+==831== For counts of detected and suppressed errors, rerun with: -v
+==831== ERROR SUMMARY: 12 errors from 1 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
