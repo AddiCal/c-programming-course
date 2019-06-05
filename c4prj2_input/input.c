@@ -123,7 +123,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
     }
 
     //is this step necessary?
-    ans[i] = malloc(sizeof(deck_t*));
+    //ans[i] = malloc(sizeof(deck_t*));
     
     ans[i] = hand_from_string(line, fc);
     line = NULL;
